@@ -6,18 +6,20 @@ import QuoteTickersControls from './features/quoteTable/controls/QuoteTickersCon
 import './App.css';
 
 const App: React.FC = () => {
+  const rows = [
+    { id: 'quoteTickersControls', component: QuoteTickersControls },
+    { id: 'quoteTable', component: QuoteTable },
+  ];
+
   return (
     <div className="container-lg">
-      <div className="row pt-3">
-        <div className="col">
-          <QuoteTickersControls />
+      {rows.map(({ id, component: Component }) => (
+        <div key={id} className="row pt-3">
+          <div className="col">
+            <Component />
+          </div>
         </div>
-      </div>
-      <div className="row pt-3">
-        <div className="col-12">
-          <QuoteTable />
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
