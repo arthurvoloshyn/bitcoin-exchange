@@ -10,10 +10,7 @@ interface IQuoteTableHeadProps {
   sortParams: ISortParams;
 }
 
-const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({
-  dispatch,
-  sortParams,
-}) => {
+const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }) => {
   return (
     <thead>
       <tr>
@@ -21,8 +18,7 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({
           let sortClass = '';
 
           if (tableField.field === sortParams.field) {
-            sortClass =
-              sortParams.type === 'up' ? styles.thSortUp : styles.thSortDown;
+            sortClass = sortParams.type === 'up' ? styles.thSortUp : styles.thSortDown;
           }
 
           return (
@@ -33,8 +29,7 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({
                 dispatch(
                   tickersSlice.actions.setSortType({
                     type:
-                      sortParams.field === tableField.field &&
-                      sortParams.type === 'down'
+                      sortParams.field === tableField.field && sortParams.type === 'down'
                         ? 'up'
                         : 'down',
                     field: tableField.field,

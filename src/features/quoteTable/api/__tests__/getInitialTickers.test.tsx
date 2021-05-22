@@ -41,10 +41,7 @@ describe('Test get initial tickers', () => {
     const tickers = await getInitialTickers(ws, testSymbols);
 
     expect(ws.send).toHaveBeenCalledTimes(2);
-    expect(ws.removeEventListener).toHaveBeenCalledWith(
-      'message',
-      expect.any(Function),
-    );
+    expect(ws.removeEventListener).toHaveBeenCalledWith('message', expect.any(Function));
 
     const testMapTickers = new Map<string, IQuoteTicker>();
 

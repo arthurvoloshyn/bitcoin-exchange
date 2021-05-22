@@ -2,9 +2,7 @@ import { IQuoteTickerSymbol } from '../interfaces';
 import { WebSocketApp } from '../../../utils';
 import { REQUEST_IDS } from './interfaces';
 
-export default function getSymbols(
-  ws: WebSocketApp,
-): Promise<IQuoteTickerSymbol[]> {
+export default function getSymbols(ws: WebSocketApp): Promise<IQuoteTickerSymbol[]> {
   return new Promise<IQuoteTickerSymbol[]>(resolve => {
     const msgSymbolsHandler = ({ data }: MessageEvent): void => {
       const msg = JSON.parse(data);

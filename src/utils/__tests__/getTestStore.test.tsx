@@ -7,16 +7,13 @@ const payloadOne = 'payloadOne';
 const payloadTwo = 'payloadTwo';
 const responseValue = 'testResponseValue';
 const api = jest.fn().mockResolvedValue(responseValue);
-const testThunk = createAsyncThunk<string, string>(
-  'testPrefix',
-  async (payload, thunkApi) => {
-    const data = await api(payload);
+const testThunk = createAsyncThunk<string, string>('testPrefix', async (payload, thunkApi) => {
+  const data = await api(payload);
 
-    thunkApi.dispatch(testActionTwo(responseValue));
+  thunkApi.dispatch(testActionTwo(responseValue));
 
-    return responseValue;
-  },
-);
+  return responseValue;
+});
 
 describe('Test getTestStore', () => {
   const { dispatch, getActions, clearActions } = getTestStore({});
@@ -29,10 +26,7 @@ describe('Test getTestStore', () => {
     dispatch(testActionOne(payloadOne));
     dispatch(testActionTwo(payloadTwo));
 
-    expect(getActions()).toEqual([
-      testActionOne(payloadOne),
-      testActionTwo(payloadTwo),
-    ]);
+    expect(getActions()).toEqual([testActionOne(payloadOne), testActionTwo(payloadTwo)]);
   });
 
   it('default use async action', async () => {

@@ -24,9 +24,7 @@ const symbolsMap = data
     return map;
   }, {} as IQuoteTickerSymbolMap);
 
-const Template: Story<QuoteTableViewProps> = args => (
-  <QuoteTableView {...args} />
-);
+const Template: Story<QuoteTableViewProps> = args => <QuoteTableView {...args} />;
 
 export const DefaultUse = Template.bind({});
 

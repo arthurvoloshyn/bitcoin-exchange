@@ -21,21 +21,16 @@ describe('Test ticker queue', () => {
     const testInitMapTicker = new Map();
     testInitMapTicker.set(testTicker.symbol, testTicker);
 
-    (
-      getSymbols as jest.MockedFunction<typeof getSymbols>
-    ).mockResolvedValueOnce(testSymbols);
-    (
-      getInitialTickers as jest.MockedFunction<typeof getInitialTickers>
-    ).mockResolvedValueOnce(testInitMapTicker);
+    (getSymbols as jest.MockedFunction<typeof getSymbols>).mockResolvedValueOnce(testSymbols);
+    (getInitialTickers as jest.MockedFunction<typeof getInitialTickers>).mockResolvedValueOnce(
+      testInitMapTicker,
+    );
 
     await tickerQueue(ws, dispatch);
 
     expect(socketConnect).toHaveBeenCalled();
     expect(getSymbols).toHaveBeenCalled();
-    expect(dispatch).toHaveBeenNthCalledWith(
-      1,
-      tickersSlice.actions.symbols.set(testSymbols),
-    );
+    expect(dispatch).toHaveBeenNthCalledWith(1, tickersSlice.actions.symbols.set(testSymbols));
     expect(getInitialTickers).toHaveBeenCalled();
     expect(dispatch).toHaveBeenNthCalledWith(
       2,

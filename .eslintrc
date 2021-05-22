@@ -124,9 +124,9 @@
     "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "max-len": ["error", {
-      "code": 80,
+      "code": 100,
       "tabWidth": 2,
-      "comments": 80
+      "comments": 100
     }],
     "multiline-comment-style": ["error", "separate-lines"],
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],

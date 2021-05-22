@@ -2,10 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { byRole } from 'testing-library-selector';
 import userEvent from '@testing-library/user-event';
-import {
-  getMockStoreTestProvider,
-  spyStore,
-} from '../../../../utils/getTestProvider';
+import { getMockStoreTestProvider, spyStore } from '../../../../utils/getTestProvider';
 import QuoteTickersControls from '../QuoteTickersControls';
 import tickersSlice from '../../store/tickersSlice';
 

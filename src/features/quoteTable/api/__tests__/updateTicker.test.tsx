@@ -1,4 +1,4 @@
-import { getMockQuoteTicker } from 'features/quoteTable/utils';
+import { getMockQuoteTicker } from '../../utils';
 import { getWebsocketMock } from '../../../../utils';
 import { IQuoteTicker } from '../../interfaces';
 import updateTicker from '../updateTicker';
@@ -14,9 +14,6 @@ describe('Test update ticker', () => {
 
     updateTicker(ws, dispatch);
 
-    expect(ws.addEventListener).toHaveBeenCalledWith(
-      'message',
-      expect.any(Function),
-    );
+    expect(ws.addEventListener).toHaveBeenCalledWith('message', expect.any(Function));
   });
 });

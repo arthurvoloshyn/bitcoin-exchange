@@ -4,9 +4,7 @@ import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../interfaces';
 type SetUpdateTickersPayload = Map<string, IQuoteTicker>;
 
 interface ICreateActionTickerPayload {
-  (tickersMap: SetUpdateTickersPayload): ReturnType<
-    PrepareAction<IQuoteTicker[]>
-  >;
+  (tickersMap: SetUpdateTickersPayload): ReturnType<PrepareAction<IQuoteTicker[]>>;
 }
 
 function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
@@ -21,14 +19,8 @@ function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
 
 const tickersActions = {
   tickers: {
-    set: createAction<ICreateActionTickerPayload>(
-      'tickers/set',
-      prepareTickersMap,
-    ),
-    update: createAction<ICreateActionTickerPayload>(
-      'tickers/update',
-      prepareTickersMap,
-    ),
+    set: createAction<ICreateActionTickerPayload>('tickers/set', prepareTickersMap),
+    update: createAction<ICreateActionTickerPayload>('tickers/update', prepareTickersMap),
   },
   symbols: {
     set: createAction<IQuoteTickerSymbol[]>('tickers/symbols/set'),

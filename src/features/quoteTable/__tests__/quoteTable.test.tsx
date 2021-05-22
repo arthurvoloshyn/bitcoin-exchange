@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { byRole, byText } from 'testing-library-selector';
-import QuoteTableView, { QuoteTableViewProps } from '../QuoteTableView';
+import QuoteTableView, { IQuoteTableViewProps } from '../QuoteTableView';
 import quoteTableClasses from '../quoteTableClasse';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../utils';
 import {
@@ -13,7 +13,7 @@ import {
 
 describe('Test QuoteTable', () => {
   let testTickers: IQuoteTicker[];
-  let previousData: QuoteTableViewProps['previousData'];
+  let previousData: IQuoteTableViewProps['previousData'];
   let testTicker: IQuoteTicker;
   let testTickerSymbol: IQuoteTickerSymbol;
   let testSymbolMap: IQuoteTickerSymbolMap;
@@ -76,11 +76,7 @@ describe('Test QuoteTable', () => {
       />,
     );
 
-    expect(byText(testTicker.bid).get()).toHaveClass(
-      quoteTableClasses.cellValueDawn,
-    );
-    expect(byText(testTicker.ask).get()).toHaveClass(
-      quoteTableClasses.cellValueUp,
-    );
+    expect(byText(testTicker.bid).get()).toHaveClass(quoteTableClasses.cellValueDawn);
+    expect(byText(testTicker.ask).get()).toHaveClass(quoteTableClasses.cellValueUp);
   });
 });

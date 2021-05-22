@@ -14,10 +14,7 @@ describe('Test QuoteTableHead', () => {
 
     render(
       <table>
-        <QuoteTableHead
-          dispatch={dispatch}
-          sortParams={{ type: 'up', field: testField.field }}
-        />
+        <QuoteTableHead dispatch={dispatch} sortParams={{ type: 'up', field: testField.field }} />
       </table>,
     );
 

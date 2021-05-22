@@ -29,33 +29,25 @@ export const initialTickersState: ITickersState = {
 
 const reducer = createReducer(initialTickersState, builder => {
   builder
-    .addCase(
-      tickersActions.tickers.set,
-      ({ data }, { payload: tickersCache }) => {
-        tickersCache.forEach(ticker => {
+    .addCase(tickersActions.tickers.set, ({ data }, { payload: tickersCache }) => {
+      tickersCache.forEach(ticker => {
+        data.push(ticker);
+      });
+    })
+    .addCase(tickersActions.tickers.update, ({ data, previousData }, { payload: tickersCache }) => {
+      Object.keys(previousData).forEach(id => delete previousData[id]);
+
+      tickersCache.forEach(ticker => {
+        const existIndex = data.findIndex(existTicker => existTicker.symbol === ticker.symbol);
+
+        if (existIndex !== -1) {
+          previousData[ticker.symbol] = { ...data[existIndex] };
+          data[existIndex] = ticker;
+        } else {
           data.push(ticker);
-        });
-      },
-    )
-    .addCase(
-      tickersActions.tickers.update,
-      ({ data, previousData }, { payload: tickersCache }) => {
-        Object.keys(previousData).forEach(id => delete previousData[id]);
-
-        tickersCache.forEach(ticker => {
-          const existIndex = data.findIndex(
-            existTicker => existTicker.symbol === ticker.symbol,
-          );
-
-          if (existIndex !== -1) {
-            previousData[ticker.symbol] = { ...data[existIndex] };
-            data[existIndex] = ticker;
-          } else {
-            data.push(ticker);
-          }
-        });
-      },
-    )
+        }
+      });
+    })
     .addCase(tickersActions.symbols.set, ({ symbols }, { payload }) => {
       payload.forEach(symbol => {
         symbols[symbol.id] = symbol;

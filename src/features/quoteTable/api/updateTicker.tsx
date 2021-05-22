@@ -5,10 +5,7 @@ import tickersSlice from '../store/tickersSlice';
 
 const updateInterval = 42; // in ms
 
-export default function updateTicker(
-  ws: WebSocketApp,
-  dispatch: AppDispatch,
-): void {
+export default function updateTicker(ws: WebSocketApp, dispatch: AppDispatch): void {
   const tickerCache = new Map();
   let controlPoint = Date.now();
 

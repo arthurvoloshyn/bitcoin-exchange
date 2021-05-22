@@ -4,11 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { render } from '@testing-library/react';
 import { byText, byRole } from 'testing-library-selector';
 import userEvent from '@testing-library/user-event';
-import {
-  getMockStoreTestProvider,
-  spyStore,
-  getTestProvider,
-} from '../getTestProvider';
+import { getMockStoreTestProvider, spyStore, getTestProvider } from '../getTestProvider';
 
 describe('Test stores test utils', () => {
   it('Test getTestProvider', () => {
