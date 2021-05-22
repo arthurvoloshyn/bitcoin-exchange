@@ -1,4 +1,4 @@
-import { getMockQuoteTicker, getSortByField } from '../';
+import { getMockQuoteTicker, getSortByField } from '..';
 
 describe('Test get sort by field fn', () => {
   const oneTicker = getMockQuoteTicker();

@@ -1,13 +1,13 @@
+import {
+  getMockQuoteTickerSymbol,
+  getMockQuoteTicker,
+} from 'features/quoteTable/utils';
 import tickerQueue from '../tickerQueue';
 import { WebSocketApp, getWebsocketMock } from '../../../../utils';
 import getSymbols from '../getSymbols';
 import getInitialTickers from '../getInitialTickers';
 import updateTicker from '../updateTicker';
 import socketConnect from '../socketConnect';
-import {
-  getMockQuoteTickerSymbol,
-  getMockQuoteTicker,
-} from 'features/quoteTable/utils';
 import tickersSlice from '../../store/tickersSlice';
 
 jest.mock('../getSymbols');

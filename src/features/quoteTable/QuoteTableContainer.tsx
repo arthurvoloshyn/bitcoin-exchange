@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getSortByField } from 'features/quoteTable/utils';
 import { tickersSelector } from './store/selectors';
 import QuoteTableView from './QuoteTableView';
 import tickerQueue from './api/tickerQueue';
 import { tickersWs } from './api/socketConnect';
-import { getSortByField } from 'features/quoteTable/utils';
 
 const sortByLastDown = getSortByField('last', 'down');
 
@@ -36,11 +36,11 @@ export default function QuoteTable() {
   return (
     <QuoteTableView
       data={data}
+      dispatch={dispatch}
       previousData={tickersState.previousData}
+      sortParams={sortParams}
       symbolsMap={tickersState.symbols}
       themeDark={tickersState.isDarkTheme}
-      dispatch={dispatch}
-      sortParams={sortParams}
     />
   );
 }

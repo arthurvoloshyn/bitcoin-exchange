@@ -8,21 +8,21 @@ export default function QuoteTickersControls() {
   return (
     <div aria-label="Quote Tickers controls">
       <button
-        type="button"
         className="btn btn-primary"
         onClick={() => {
           dispatch(tickersSlice.actions.toggleLimit());
         }}
+        type="button"
       >
         On / Off Limit tickers
       </button>
       &nbsp;
       <button
-        type="button"
         className="btn btn-primary"
         onClick={() => {
           dispatch(tickersSlice.actions.toggleDarkTheme());
         }}
+        type="button"
       >
         On / Off Dark Theme
       </button>

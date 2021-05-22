@@ -1,5 +1,5 @@
-import { getWebsocketMock } from '../../../../utils';
 import { getMockQuoteTicker } from 'features/quoteTable/utils';
+import { getWebsocketMock } from '../../../../utils';
 import { QuoteTicker } from '../../interfaces';
 import updateTicker from '../updateTicker';
 

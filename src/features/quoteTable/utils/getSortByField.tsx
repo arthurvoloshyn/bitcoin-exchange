@@ -11,7 +11,8 @@ export default function getSortByField(
 
       if (a > b) {
         return sortType === 'up' ? 1 : -1;
-      } else if (a < b) {
+      }
+      if (a < b) {
         return sortType === 'up' ? -1 : 1;
       }
 
@@ -25,7 +26,8 @@ export default function getSortByField(
 
     if (a > b) {
       return sortType === 'up' ? 1 : -1;
-    } else if (a < b) {
+    }
+    if (a < b) {
       return sortType === 'up' ? -1 : 1;
     }
 

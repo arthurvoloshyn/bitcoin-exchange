@@ -1,8 +1,8 @@
-import { QuoteTicker } from '../../interfaces';
 import {
   getMockQuoteTicker,
   getMockQuoteTickerSymbol,
 } from 'features/quoteTable/utils';
+import { QuoteTicker } from '../../interfaces';
 import getInitialTickers from '../getInitialTickers';
 import { getWebsocketMock } from '../../../../utils';
 import { REQUEST_IDS } from '../interfaces';

@@ -19,16 +19,14 @@ const QuoteTableRow = memo(
 
           if (tableField.field === 'symbol') {
             value = `${symbol.baseCurrency} / ${symbol.feeCurrency}`;
-          } else {
-            if (previousTicker !== null) {
-              switch (tableField.compare(ticker, previousTicker)) {
-                case -1:
-                  extClasses = quoteTableClasses.cellValueDawn;
-                  break;
-                case 1:
-                  extClasses = quoteTableClasses.cellValueUp;
-                  break;
-              }
+          } else if (previousTicker !== null) {
+            switch (tableField.compare(ticker, previousTicker)) {
+              case -1:
+                extClasses = quoteTableClasses.cellValueDawn;
+                break;
+              case 1:
+                extClasses = quoteTableClasses.cellValueUp;
+                break;
             }
           }
 

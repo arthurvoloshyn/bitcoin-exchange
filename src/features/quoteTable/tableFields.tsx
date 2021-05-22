@@ -10,7 +10,8 @@ function getCompareNumber(field: keyof QuoteTicker): TableField['compare'] {
   return (a: QuoteTicker, b: QuoteTicker) => {
     if (Number(a[field]) > Number(b[field])) {
       return 1;
-    } else if (Number(a[field]) < Number(b[field])) {
+    }
+    if (Number(a[field]) < Number(b[field])) {
       return -1;
     }
 
@@ -25,7 +26,8 @@ const quoteTableFields: TableField[] = [
     compare: (a, b) => {
       if (a.symbol > b.symbol) {
         return 1;
-      } else if (a.symbol < b.symbol) {
+      }
+      if (a.symbol < b.symbol) {
         return -1;
       }
 

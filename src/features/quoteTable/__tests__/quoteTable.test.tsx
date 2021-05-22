@@ -40,10 +40,10 @@ describe('Test QuoteTable', () => {
     render(
       <QuoteTableView
         data={testTickers}
-        previousData={{}}
-        symbolsMap={testSymbolMap}
         dispatch={dispatch}
+        previousData={{}}
         sortParams={defaultSortParams}
+        symbolsMap={testSymbolMap}
       />,
     );
 
@@ -54,11 +54,11 @@ describe('Test QuoteTable', () => {
     render(
       <QuoteTableView
         data={[]}
-        previousData={{}}
-        themeDark
-        symbolsMap={testSymbolMap}
-        sortParams={defaultSortParams}
         dispatch={dispatch}
+        previousData={{}}
+        sortParams={defaultSortParams}
+        symbolsMap={testSymbolMap}
+        themeDark
       />,
     );
 
@@ -69,10 +69,10 @@ describe('Test QuoteTable', () => {
     render(
       <QuoteTableView
         data={testTickers}
-        previousData={previousData}
-        symbolsMap={testSymbolMap}
-        sortParams={defaultSortParams}
         dispatch={dispatch}
+        previousData={previousData}
+        sortParams={defaultSortParams}
+        symbolsMap={testSymbolMap}
       />,
     );
 

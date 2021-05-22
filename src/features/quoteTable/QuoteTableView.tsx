@@ -42,9 +42,9 @@ export default function QuoteTableView({
           return (
             <QuoteTableRow
               key={ticker.symbol}
-              ticker={ticker}
               previousTicker={previousTicker}
               symbol={symbol}
+              ticker={ticker}
             />
           );
         })}

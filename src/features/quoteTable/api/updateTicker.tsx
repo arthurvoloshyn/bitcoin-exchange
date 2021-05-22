@@ -3,7 +3,7 @@ import { AppDispatch } from '../../../app/store';
 import { QuoteTicker } from '../interfaces';
 import tickersSlice from '../store/tickersSlice';
 
-const updateInterval = 42; //in ms
+const updateInterval = 42; // in ms
 
 export default function updateTicker(ws: WebSocketApp, dispatch: AppDispatch) {
   const tickerCache = new Map();

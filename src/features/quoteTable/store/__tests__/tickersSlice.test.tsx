@@ -3,7 +3,7 @@ import tickersSlice, { initialTickersState } from '../tickersSlice';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../utils';
 
 describe('Test tickers slice', () => {
-  const reducer = tickersSlice.reducer;
+  const { reducer } = tickersSlice;
   let testTicker: QuoteTicker;
   let tickersCache: Map<string, QuoteTicker>;
 

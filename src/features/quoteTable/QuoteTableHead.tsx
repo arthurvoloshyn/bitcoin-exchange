@@ -1,5 +1,5 @@
-import quoteTableFields from './tableFields';
 import React from 'react';
+import quoteTableFields from './tableFields';
 import { SortParams } from './interfaces';
 import { AppDispatch } from '../../app/store';
 import tickersSlice from './store/tickersSlice';
@@ -27,8 +27,8 @@ export default function QuoteTableHead({
 
           return (
             <th
-              className={sortClass}
               key={tableField.field}
+              className={sortClass}
               onClick={() => {
                 dispatch(
                   tickersSlice.actions.setSortType({
