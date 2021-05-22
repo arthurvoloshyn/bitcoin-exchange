@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import { store } from './app/store';
+import ENV from './constants/environment';
+import { store } from './state/store';
 import App from './App';
 
 import './index.css';
@@ -20,4 +21,4 @@ render(
 
 serviceWorkerRegistration.register();
 
-reportWebVitals(console.log);
+if (ENV.IS_DEV) reportWebVitals(console.log); // eslint-disable-line no-console

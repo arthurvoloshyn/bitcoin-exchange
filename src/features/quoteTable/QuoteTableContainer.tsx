@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSortByField } from './utils';
-import { tickersSelector } from './store/selectors';
+import { tickersSelector } from '../../state/ducks/quoteTable/selectors';
 import QuoteTableView from './QuoteTableView';
 import tickerQueue from './api/tickerQueue';
 import { tickersWs } from './api/socketConnect';

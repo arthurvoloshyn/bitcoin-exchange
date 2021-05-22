@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { byText } from 'testing-library-selector';
 import QuoteTableHead from '../QuoteTableHead';
 import quoteTableFields from '../tableFields';
-import tickersSlice from '../store/tickersSlice';
+import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
 import styles from '../styles.module.scss';
 
 describe('Test QuoteTableHead', () => {

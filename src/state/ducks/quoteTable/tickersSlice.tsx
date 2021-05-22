@@ -1,5 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../interfaces';
+import {
+  IQuoteTicker,
+  IQuoteTickerSymbol,
+  ISortParams,
+} from '../../../features/quoteTable/interfaces';
 import tickersActions from './actions';
 
 export interface ITickersState {

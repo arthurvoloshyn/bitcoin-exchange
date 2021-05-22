@@ -1,32 +1,16 @@
 import { QuoteTickerFields, SortType, IQuoteTicker } from '../interfaces';
 
-const getSortByField = (field: QuoteTickerFields, sortType: SortType) => {
-  if (field === 'symbol') {
-    return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {
-      const a = tickerA[field];
-      const b = tickerB[field];
+type SortField = (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => 1 | -1 | 0;
 
-      if (a > b) {
-        return sortType === 'up' ? 1 : -1;
-      }
-      if (a < b) {
-        return sortType === 'up' ? -1 : 1;
-      }
-
-      return 0;
-    };
-  }
-
+const getSortByField = (field: QuoteTickerFields, sortType: SortType): SortField => {
   return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {
-    const a = Number(tickerA[field]);
-    const b = Number(tickerB[field]);
+    const fieldIsSymbol: boolean = field === 'symbol';
 
-    if (a > b) {
-      return sortType === 'up' ? 1 : -1;
-    }
-    if (a < b) {
-      return sortType === 'up' ? -1 : 1;
-    }
+    const a: string | number = fieldIsSymbol ? tickerA[field] : +tickerA[field];
+    const b: string | number = fieldIsSymbol ? tickerB[field] : +tickerB[field];
+
+    if (a > b) return sortType === 'up' ? 1 : -1;
+    if (a < b) return sortType === 'up' ? -1 : 1;
 
     return 0;
   };

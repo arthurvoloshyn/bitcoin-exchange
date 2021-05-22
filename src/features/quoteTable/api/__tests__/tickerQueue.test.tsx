@@ -5,7 +5,7 @@ import getSymbols from '../getSymbols';
 import getInitialTickers from '../getInitialTickers';
 import updateTicker from '../updateTicker';
 import socketConnect from '../socketConnect';
-import tickersSlice from '../../store/tickersSlice';
+import tickersSlice from '../../../../state/ducks/quoteTable/tickersSlice';
 
 jest.mock('../getSymbols');
 jest.mock('../getInitialTickers');

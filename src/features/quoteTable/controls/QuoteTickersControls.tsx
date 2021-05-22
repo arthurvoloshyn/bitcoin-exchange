@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import tickersSlice from '../store/tickersSlice';
+import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
 
 const QuoteTickersControls: React.FC = () => {
   const dispatch = useDispatch();

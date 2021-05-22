@@ -1,4 +1,4 @@
-import { getMockQuoteTickerSymbol } from 'features/quoteTable/utils';
+import { getMockQuoteTickerSymbol } from '../../utils';
 import { getWebsocketMock, IMockWebsocket } from '../../../../utils';
 import getSymbols from '../getSymbols';
 import { REQUEST_IDS } from '../interfaces';

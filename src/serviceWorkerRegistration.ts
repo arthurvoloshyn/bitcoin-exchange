@@ -1,4 +1,6 @@
-/* eslint-disable no-param-reassign, no-console, max-len, @typescript-eslint/prefer-regexp-exec */
+/* eslint-disable no-param-reassign, no-console, @typescript-eslint/prefer-regexp-exec */
+
+import ENV from './constants/environment';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -14,7 +16,7 @@ type Config = {
 };
 
 export function register(config?: Config): void {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  if (ENV.IS_PROD && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {

@@ -1,10 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import tickersSlice from '../features/quoteTable/store/tickersSlice';
+
+import ENV from '../constants/environment';
+import tickersSlice from './ducks/quoteTable/tickersSlice';
 
 export const store = configureStore({
   reducer: {
     tickers: tickersSlice.reducer,
   },
+  devTools: ENV.IS_DEV,
 });
 
 export type RootState = ReturnType<typeof store.getState>;

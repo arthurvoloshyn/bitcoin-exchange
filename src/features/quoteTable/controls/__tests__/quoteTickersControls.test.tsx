@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { byRole } from 'testing-library-selector';
 import userEvent from '@testing-library/user-event';
-import { getMockStoreTestProvider, spyStore } from '../../../../utils/getTestProvider';
+import { getMockStoreTestProvider } from '../../../../utils/getTestProvider';
 import QuoteTickersControls from '../QuoteTickersControls';
-import tickersSlice from '../../store/tickersSlice';
+import tickersSlice from '../../../../state/ducks/quoteTable/tickersSlice';
 
 describe('Test Controls', () => {
   it('Test Default use', () => {

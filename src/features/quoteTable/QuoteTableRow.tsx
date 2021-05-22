@@ -9,7 +9,7 @@ interface IQuoteTableRowProps {
   symbol: IQuoteTickerSymbol;
 }
 
-const QuoteTableRow = memo(({ ticker, previousTicker, symbol }: IQuoteTableRowProps) => {
+const QuoteTableRow: React.FC<IQuoteTableRowProps> = ({ ticker, previousTicker, symbol }) => {
   return (
     <tr key={ticker.symbol}>
       {quoteTableFields.map(tableField => {
@@ -39,6 +39,6 @@ const QuoteTableRow = memo(({ ticker, previousTicker, symbol }: IQuoteTableRowPr
       })}
     </tr>
   );
-});
+};
 
-export default QuoteTableRow;
+export default memo(QuoteTableRow);

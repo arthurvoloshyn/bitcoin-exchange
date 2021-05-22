@@ -6,33 +6,25 @@ interface ITableField {
   compare(a: IQuoteTicker, b: IQuoteTicker): number;
 }
 
-function getCompareNumber(field: keyof IQuoteTicker): ITableField['compare'] {
-  return (a: IQuoteTicker, b: IQuoteTicker) => {
-    if (Number(a[field]) > Number(b[field])) {
-      return 1;
-    }
-    if (Number(a[field]) < Number(b[field])) {
-      return -1;
-    }
+const getCompareNumber =
+  (field: keyof IQuoteTicker): ITableField['compare'] =>
+  (a: IQuoteTicker, b: IQuoteTicker) => {
+    const fieldIsSymbol: boolean = field === 'symbol';
+
+    const fieldA: string | number = fieldIsSymbol ? a[field] : +a[field];
+    const fieldB: string | number = fieldIsSymbol ? b[field] : +b[field];
+
+    if (fieldA > fieldB) return 1;
+    if (fieldA < fieldB) return -1;
 
     return 0;
   };
-}
 
 const quoteTableFields: ITableField[] = [
   {
     title: 'Ticker',
     field: 'symbol',
-    compare: (a, b) => {
-      if (a.symbol > b.symbol) {
-        return 1;
-      }
-      if (a.symbol < b.symbol) {
-        return -1;
-      }
-
-      return 0;
-    },
+    compare: getCompareNumber('symbol'),
   },
   {
     title: 'Bid',

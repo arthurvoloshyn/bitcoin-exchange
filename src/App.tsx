@@ -5,15 +5,17 @@ import QuoteTickersControls from './features/quoteTable/controls/QuoteTickersCon
 
 import './App.css';
 
+type Row = { id: string; component: React.FC };
+
 const App: React.FC = () => {
-  const rows = [
+  const rows: Row[] = [
     { id: 'quoteTickersControls', component: QuoteTickersControls },
     { id: 'quoteTable', component: QuoteTable },
   ];
 
   return (
     <div className="container-lg">
-      {rows.map(({ id, component: Component }) => (
+      {rows.map(({ id, component: Component }: Row) => (
         <div key={id} className="row pt-3">
           <div className="col">
             <Component />

@@ -1,6 +1,9 @@
-import { IQuoteTicker, ISortParams } from '../../interfaces';
+import { IQuoteTicker, ISortParams } from '../../../../features/quoteTable/interfaces';
 import tickersSlice, { initialTickersState } from '../tickersSlice';
-import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../utils';
+import {
+  getMockQuoteTicker,
+  getMockQuoteTickerSymbol,
+} from '../../../../features/quoteTable/utils';
 
 describe('Test tickers slice', () => {
   const { reducer } = tickersSlice;

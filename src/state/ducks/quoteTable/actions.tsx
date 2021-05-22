@@ -1,5 +1,9 @@
 import { createAction, PrepareAction } from '@reduxjs/toolkit';
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../interfaces';
+import {
+  IQuoteTicker,
+  IQuoteTickerSymbol,
+  ISortParams,
+} from '../../../features/quoteTable/interfaces';
 
 type SetUpdateTickersPayload = Map<string, IQuoteTicker>;
 
@@ -7,7 +11,9 @@ interface ICreateActionTickerPayload {
   (tickersMap: SetUpdateTickersPayload): ReturnType<PrepareAction<IQuoteTicker[]>>;
 }
 
-function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
+type PrepareTickersMap = { payload: IQuoteTicker[] };
+
+const prepareTickersMap = (tickersMap: SetUpdateTickersPayload): PrepareTickersMap => {
   const result: IQuoteTicker[] = [];
 
   tickersMap.forEach(ticker => result.push(ticker));
@@ -15,7 +21,7 @@ function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
   return {
     payload: result,
   };
-}
+};
 
 const tickersActions = {
   tickers: {

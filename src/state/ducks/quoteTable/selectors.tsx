@@ -1,4 +1,4 @@
-import { RootState } from '../../../app/store';
+import { RootState } from '../../store';
 import { ITickersState } from './tickersSlice';
 
 // eslint-disable-next-line import/prefer-default-export

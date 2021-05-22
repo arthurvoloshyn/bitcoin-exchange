@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import QuoteTableView, { QuoteTableViewProps } from './QuoteTableView';
+import QuoteTableView, { IQuoteTableViewProps } from './QuoteTableView';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from './utils';
 import { IQuoteTickerSymbolMap } from './interfaces';
 
@@ -24,7 +24,7 @@ const symbolsMap = data
     return map;
   }, {} as IQuoteTickerSymbolMap);
 
-const Template: Story<QuoteTableViewProps> = args => <QuoteTableView {...args} />;
+const Template: Story<IQuoteTableViewProps> = args => <QuoteTableView {...args} />;
 
 export const DefaultUse = Template.bind({});
 

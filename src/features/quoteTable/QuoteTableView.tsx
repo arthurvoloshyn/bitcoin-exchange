@@ -3,7 +3,7 @@ import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from './interfaces';
 import QuoteTableRow from './QuoteTableRow';
 import quoteTableClasses from './quoteTableClasse';
 import QuoteTableHead from './QuoteTableHead';
-import { AppDispatch } from '../../app/store';
+import { AppDispatch } from '../../state/store';
 import styles from './styles.module.scss';
 
 export interface IQuoteTableViewProps {
