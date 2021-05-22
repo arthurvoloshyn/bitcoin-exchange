@@ -1,32 +1,32 @@
 import React from 'react';
-import { QuoteTicker, QuoteTickerSymbol, SortParams } from './interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from './interfaces';
 import QuoteTableRow from './QuoteTableRow';
 import quoteTableClasses from './quoteTableClasse';
 import QuoteTableHead from './QuoteTableHead';
 import { AppDispatch } from '../../app/store';
 import styles from './styles.module.scss';
 
-export interface QuoteTableViewProps {
-  data: QuoteTicker[];
+export interface IQuoteTableViewProps {
+  data: IQuoteTicker[];
   previousData: {
-    [symbolId: string]: QuoteTicker;
+    [symbolId: string]: IQuoteTicker;
   };
   themeDark?: boolean;
   symbolsMap: {
-    [id: string]: QuoteTickerSymbol;
+    [id: string]: IQuoteTickerSymbol;
   };
-  sortParams: SortParams;
+  sortParams: ISortParams;
   dispatch: AppDispatch;
 }
 
-export default function QuoteTableView({
+const QuoteTableView: React.FC<IQuoteTableViewProps> = ({
   data,
   previousData,
   themeDark,
   symbolsMap,
   sortParams,
   dispatch,
-}: QuoteTableViewProps) {
+}) => {
   return (
     <table
       className={`table table-striped ${styles.quoteTable} ${
@@ -51,4 +51,6 @@ export default function QuoteTableView({
       </tbody>
     </table>
   );
-}
+};
+
+export default QuoteTableView;

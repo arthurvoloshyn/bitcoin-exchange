@@ -11,7 +11,7 @@ import {
 } from '../getTestProvider';
 
 describe('Test stores test utils', () => {
-  it('Test getTestProvider', async () => {
+  it('Test getTestProvider', () => {
     const initialState = 'init';
     const testValue = 'test Value';
     const { actions, reducer } = createSlice({
@@ -27,7 +27,7 @@ describe('Test stores test utils', () => {
     const { TestProvider, store } = getTestProvider({ test: reducer });
     type RootTestState = ReturnType<typeof store.getState>;
 
-    const TestComponent = () => {
+    const TestComponent = (): React.ReactNode => {
       const value = useSelector((state: RootTestState) => state.test);
       const dispatch = useDispatch();
 

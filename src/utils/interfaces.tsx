@@ -1,8 +1,12 @@
-export type WebSocketApp = Pick<
-  WebSocket,
-  'addEventListener' | 'send' | 'close' | 'removeEventListener'
->;
-export interface MockWebsocket {
+type WebSocketAppKeys =
+  | 'addEventListener'
+  | 'send'
+  | 'close'
+  | 'removeEventListener';
+
+export type WebSocketApp = Pick<WebSocket, WebSocketAppKeys>;
+
+export interface IMockWebsocket {
   close: jest.MockedFunction<WebSocket['close']>;
   send: jest.MockedFunction<WebSocket['send']>;
   addEventListener: jest.MockedFunction<WebSocket['addEventListener']>;

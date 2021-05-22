@@ -1,6 +1,6 @@
 import getWebsocketMock from './websocketMock';
-import { WebSocketApp, MockWebsocket } from './interfaces';
+import { WebSocketApp, IMockWebsocket } from './interfaces';
 
-export type { WebSocketApp, MockWebsocket };
+export type { WebSocketApp, IMockWebsocket };
 
 export { getWebsocketMock };

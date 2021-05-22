@@ -1,14 +1,14 @@
-import { QuoteTicker, SortParams } from '../../interfaces';
+import { IQuoteTicker, ISortParams } from '../../interfaces';
 import tickersSlice, { initialTickersState } from '../tickersSlice';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../utils';
 
 describe('Test tickers slice', () => {
   const { reducer } = tickersSlice;
-  let testTicker: QuoteTicker;
-  let tickersCache: Map<string, QuoteTicker>;
+  let testTicker: IQuoteTicker;
+  let tickersCache: Map<string, IQuoteTicker>;
 
   beforeEach(() => {
-    tickersCache = new Map<string, QuoteTicker>();
+    tickersCache = new Map<string, IQuoteTicker>();
     testTicker = getMockQuoteTicker();
   });
 
@@ -79,7 +79,7 @@ describe('Test tickers slice', () => {
   });
 
   it('Test set sort type', () => {
-    const testPayload: SortParams = {
+    const testPayload: ISortParams = {
       type: 'down',
       field: 'ask',
     };

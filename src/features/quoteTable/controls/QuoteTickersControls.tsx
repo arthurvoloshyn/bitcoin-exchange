@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import tickersSlice from '../store/tickersSlice';
 
-export default function QuoteTickersControls() {
+const QuoteTickersControls: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
@@ -28,4 +28,6 @@ export default function QuoteTickersControls() {
       </button>
     </div>
   );
-}
+};
+
+export default QuoteTickersControls;

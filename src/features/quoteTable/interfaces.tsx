@@ -1,4 +1,4 @@
-export interface QuoteTicker {
+export interface IQuoteTicker {
   symbol: string;
   bid: string;
   ask: string;
@@ -7,23 +7,23 @@ export interface QuoteTicker {
   last: string;
 }
 
-export type QuoteTickerFields = keyof QuoteTicker;
+export type QuoteTickerFields = keyof IQuoteTicker;
 
-export interface QuoteTickerSymbol {
+export interface IQuoteTickerSymbol {
   id: string;
   baseCurrency: string;
   feeCurrency: string;
 }
 
-export interface QuoteTickerSymbolMap {
-  [id: string]: QuoteTickerSymbol;
+export interface IQuoteTickerSymbolMap {
+  [id: string]: IQuoteTickerSymbol;
 }
 
-export interface QuoteTickerMap {
-  [tickerSymbol: string]: QuoteTicker;
+export interface IQuoteTickerMap {
+  [tickerSymbol: string]: IQuoteTicker;
 }
 
-export interface SortParams {
+export interface ISortParams {
   field: QuoteTickerFields;
   type: SortType;
 }

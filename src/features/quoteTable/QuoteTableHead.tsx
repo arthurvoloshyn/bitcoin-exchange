@@ -1,19 +1,19 @@
 import React from 'react';
 import quoteTableFields from './tableFields';
-import { SortParams } from './interfaces';
+import { ISortParams } from './interfaces';
 import { AppDispatch } from '../../app/store';
 import tickersSlice from './store/tickersSlice';
 import styles from './styles.module.scss';
 
-interface QuoteTableHeadProps {
+interface IQuoteTableHeadProps {
   dispatch: AppDispatch;
-  sortParams: SortParams;
+  sortParams: ISortParams;
 }
 
-export default function QuoteTableHead({
+const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({
   dispatch,
   sortParams,
-}: QuoteTableHeadProps) {
+}) => {
   return (
     <thead>
       <tr>
@@ -49,4 +49,6 @@ export default function QuoteTableHead({
       </tr>
     </thead>
   );
-}
+};
+
+export default QuoteTableHead;

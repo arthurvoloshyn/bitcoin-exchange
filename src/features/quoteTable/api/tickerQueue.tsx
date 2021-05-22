@@ -9,7 +9,7 @@ import tickersSlice from '../store/tickersSlice';
 export default async function tickerQueue(
   ws: WebSocketApp,
   dispatch: AppDispatch,
-) {
+): Promise<void> {
   await socketConnect(ws);
 
   const symbols = await getSymbols(ws);

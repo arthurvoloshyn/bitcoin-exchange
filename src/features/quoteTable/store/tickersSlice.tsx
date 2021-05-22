@@ -1,21 +1,21 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { QuoteTicker, QuoteTickerSymbol, SortParams } from '../interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../interfaces';
 import tickersActions from './actions';
 
-interface TickersState {
-  data: QuoteTicker[];
+export interface ITickersState {
+  data: IQuoteTicker[];
   previousData: {
-    [id: string]: QuoteTicker;
+    [id: string]: IQuoteTicker;
   };
   symbols: {
-    [id: string]: QuoteTickerSymbol;
+    [id: string]: IQuoteTickerSymbol;
   };
   onLimit50: boolean;
-  sortType: SortParams;
+  sortType: ISortParams;
   isDarkTheme: boolean;
 }
 
-export const initialTickersState: TickersState = {
+export const initialTickersState: ITickersState = {
   data: [],
   previousData: {},
   symbols: {},

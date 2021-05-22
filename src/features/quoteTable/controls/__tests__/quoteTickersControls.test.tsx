@@ -9,10 +9,9 @@ import {
 import QuoteTickersControls from '../QuoteTickersControls';
 import tickersSlice from '../../store/tickersSlice';
 
-describe('Test Controls', function () {
+describe('Test Controls', () => {
   it('Test Default use', () => {
     const { store, TestProvider } = getMockStoreTestProvider();
-    const { dispatch } = spyStore(store);
 
     render(
       <TestProvider>

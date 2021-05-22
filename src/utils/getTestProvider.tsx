@@ -35,7 +35,7 @@ export function getTestProvider<S = any>(
   };
 }
 
-export function getMockStoreTestProvider(initState = {}) {
+export const getMockStoreTestProvider = (initState = {}) => {
   const store = getTestStore(initState);
 
   return {
@@ -44,10 +44,8 @@ export function getMockStoreTestProvider(initState = {}) {
     ),
     store,
   };
-}
+};
 
-export function spyStore(store: Store) {
-  return {
-    dispatch: jest.spyOn(store, 'dispatch'),
-  };
-}
+export const spyStore = (store: Store) => ({
+  dispatch: jest.spyOn(store, 'dispatch'),
+});

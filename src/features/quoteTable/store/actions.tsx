@@ -1,16 +1,16 @@
 import { createAction, PrepareAction } from '@reduxjs/toolkit';
-import { QuoteTicker, QuoteTickerSymbol, SortParams } from '../interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../interfaces';
 
-type SetUpdateTickersPayload = Map<string, QuoteTicker>;
+type SetUpdateTickersPayload = Map<string, IQuoteTicker>;
 
-interface CreateActionTickerPayload {
+interface ICreateActionTickerPayload {
   (tickersMap: SetUpdateTickersPayload): ReturnType<
-    PrepareAction<QuoteTicker[]>
+    PrepareAction<IQuoteTicker[]>
   >;
 }
 
 function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
-  const result: QuoteTicker[] = [];
+  const result: IQuoteTicker[] = [];
 
   tickersMap.forEach(ticker => result.push(ticker));
 
@@ -21,20 +21,20 @@ function prepareTickersMap(tickersMap: SetUpdateTickersPayload) {
 
 const tickersActions = {
   tickers: {
-    set: createAction<CreateActionTickerPayload>(
+    set: createAction<ICreateActionTickerPayload>(
       'tickers/set',
       prepareTickersMap,
     ),
-    update: createAction<CreateActionTickerPayload>(
+    update: createAction<ICreateActionTickerPayload>(
       'tickers/update',
       prepareTickersMap,
     ),
   },
   symbols: {
-    set: createAction<QuoteTickerSymbol[]>('tickers/symbols/set'),
+    set: createAction<IQuoteTickerSymbol[]>('tickers/symbols/set'),
   },
   toggleDarkTheme: createAction<void>('tickers/toggle/DarkTheme'),
-  setSortType: createAction<SortParams>('tickers/sortType/set'),
+  setSortType: createAction<ISortParams>('tickers/sortType/set'),
   toggleLimit: createAction<void>('tickers/toggle/limit50'),
 };
 

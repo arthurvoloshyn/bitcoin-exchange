@@ -1,10 +1,10 @@
-import { MockWebsocket } from './interfaces';
+import { IMockWebsocket } from './interfaces';
 
-export default function getWebsocketMock() {
-  return {
-    close: jest.fn(),
-    send: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-  } as MockWebsocket;
-}
+const getWebsocketMock = (): IMockWebsocket => ({
+  close: jest.fn(),
+  send: jest.fn(),
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+});
+
+export default getWebsocketMock;

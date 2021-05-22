@@ -1,23 +1,23 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { byRole, byText } from 'testing-library-selector';
 import QuoteTableView, { QuoteTableViewProps } from '../QuoteTableView';
 import quoteTableClasses from '../quoteTableClasse';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../utils';
 import {
-  QuoteTicker,
-  QuoteTickerSymbol,
-  QuoteTickerSymbolMap,
-  SortParams,
+  IQuoteTicker,
+  IQuoteTickerSymbol,
+  IQuoteTickerSymbolMap,
+  ISortParams,
 } from '../interfaces';
 
 describe('Test QuoteTable', () => {
-  let testTickers: QuoteTicker[];
+  let testTickers: IQuoteTicker[];
   let previousData: QuoteTableViewProps['previousData'];
-  let testTicker: QuoteTicker;
-  let testTickerSymbol: QuoteTickerSymbol;
-  let testSymbolMap: QuoteTickerSymbolMap;
-  const defaultSortParams: SortParams = { type: 'down', field: 'last' };
+  let testTicker: IQuoteTicker;
+  let testTickerSymbol: IQuoteTickerSymbol;
+  let testSymbolMap: IQuoteTickerSymbolMap;
+  const defaultSortParams: ISortParams = { type: 'down', field: 'last' };
   const dispatch = jest.fn();
 
   beforeEach(() => {

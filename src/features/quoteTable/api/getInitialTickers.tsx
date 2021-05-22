@@ -1,30 +1,30 @@
 import { WebSocketApp } from '../../../utils';
-import { QuoteTickerSymbol, QuoteTicker } from '../interfaces';
+import { IQuoteTickerSymbol, IQuoteTicker } from '../interfaces';
 import { REQUEST_IDS } from './interfaces';
 
-interface TickerSubscribeResponse {
+interface ITickerSubscribeResponse {
   id: REQUEST_IDS.subscribeTicker;
   result: boolean;
 }
 
-interface TickerResponse {
+interface ITickerResponse {
   method: 'ticker';
-  params: QuoteTicker;
+  params: IQuoteTicker;
 }
 
-type SocketData = TickerResponse | TickerSubscribeResponse;
+type SocketData = ITickerResponse | ITickerSubscribeResponse;
 
-function tickerGuard(msg: any): msg is TickerResponse {
+function tickerGuard(msg: any): msg is ITickerResponse {
   return msg.method === 'ticker';
 }
 
 export default function getInitialTickers(
   ws: WebSocketApp,
-  totalTickers: QuoteTickerSymbol[],
-): Promise<Map<string, QuoteTicker>> {
+  totalTickers: IQuoteTickerSymbol[],
+): Promise<Map<string, IQuoteTicker>> {
   return new Promise(resolve => {
-    const tickerCache = new Map<string, QuoteTicker>();
-    const handleInitTickers = ({ data }: MessageEvent) => {
+    const tickerCache = new Map<string, IQuoteTicker>();
+    const handleInitTickers = ({ data }: MessageEvent): void => {
       const msg = JSON.parse(data) as SocketData;
 
       if (tickerGuard(msg)) {

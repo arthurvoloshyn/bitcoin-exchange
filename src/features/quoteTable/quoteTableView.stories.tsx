@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import QuoteTableView, { QuoteTableViewProps } from './QuoteTableView';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from './utils';
-import { QuoteTickerSymbolMap } from './interfaces';
+import { IQuoteTickerSymbolMap } from './interfaces';
 
 export default {
   title: 'features/QuoteTableView',
@@ -22,7 +22,7 @@ const symbolsMap = data
     map[symbol.id] = symbol;
 
     return map;
-  }, {} as QuoteTickerSymbolMap);
+  }, {} as IQuoteTickerSymbolMap);
 
 const Template: Story<QuoteTableViewProps> = args => (
   <QuoteTableView {...args} />

@@ -1,9 +1,6 @@
-import {
-  getMockQuoteTickerSymbol,
-  getMockQuoteTicker,
-} from 'features/quoteTable/utils';
+import { getMockQuoteTickerSymbol, getMockQuoteTicker } from '../../utils';
 import tickerQueue from '../tickerQueue';
-import { WebSocketApp, getWebsocketMock } from '../../../../utils';
+import { getWebsocketMock } from '../../../../utils';
 import getSymbols from '../getSymbols';
 import getInitialTickers from '../getInitialTickers';
 import updateTicker from '../updateTicker';

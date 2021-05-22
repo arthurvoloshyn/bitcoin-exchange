@@ -1,11 +1,8 @@
-import { QuoteTickerFields, SortType, QuoteTicker } from '../interfaces';
+import { QuoteTickerFields, SortType, IQuoteTicker } from '../interfaces';
 
-export default function getSortByField(
-  field: QuoteTickerFields,
-  sortType: SortType,
-) {
+const getSortByField = (field: QuoteTickerFields, sortType: SortType) => {
   if (field === 'symbol') {
-    return (tickerA: QuoteTicker, tickerB: QuoteTicker) => {
+    return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {
       const a = tickerA[field];
       const b = tickerB[field];
 
@@ -20,7 +17,7 @@ export default function getSortByField(
     };
   }
 
-  return (tickerA: QuoteTicker, tickerB: QuoteTicker) => {
+  return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {
     const a = Number(tickerA[field]);
     const b = Number(tickerB[field]);
 
@@ -33,4 +30,6 @@ export default function getSortByField(
 
     return 0;
   };
-}
+};
+
+export default getSortByField;

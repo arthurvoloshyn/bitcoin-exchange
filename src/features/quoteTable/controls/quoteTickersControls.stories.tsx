@@ -1,5 +1,4 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
 import QuoteTickersControls from './QuoteTickersControls';
 import { getMockStoreTestProvider } from '../../../utils/getTestProvider';
 
@@ -10,7 +9,7 @@ export default {
 
 const { TestProvider } = getMockStoreTestProvider();
 
-export const DefaultUse = () => (
+export const DefaultUse = (): React.ReactElement => (
   <TestProvider>
     <QuoteTickersControls />
   </TestProvider>

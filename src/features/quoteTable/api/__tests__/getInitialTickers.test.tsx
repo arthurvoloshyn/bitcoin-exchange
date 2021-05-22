@@ -1,8 +1,5 @@
-import {
-  getMockQuoteTicker,
-  getMockQuoteTickerSymbol,
-} from 'features/quoteTable/utils';
-import { QuoteTicker } from '../../interfaces';
+import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../utils';
+import { IQuoteTicker } from '../../interfaces';
 import getInitialTickers from '../getInitialTickers';
 import { getWebsocketMock } from '../../../../utils';
 import { REQUEST_IDS } from '../interfaces';
@@ -49,7 +46,7 @@ describe('Test get initial tickers', () => {
       expect.any(Function),
     );
 
-    const testMapTickers = new Map<string, QuoteTicker>();
+    const testMapTickers = new Map<string, IQuoteTicker>();
 
     testTickers.forEach(ticker => testMapTickers.set(ticker.symbol, ticker));
 

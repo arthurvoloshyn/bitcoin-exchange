@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 import quoteTableFields from './tableFields';
-import { QuoteTicker, QuoteTickerSymbol } from './interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol } from './interfaces';
 import quoteTableClasses from './quoteTableClasse';
 
-interface QuoteTableRowProps {
-  ticker: QuoteTicker;
-  previousTicker: null | QuoteTicker;
-  symbol: QuoteTickerSymbol;
+interface IQuoteTableRowProps {
+  ticker: IQuoteTicker;
+  previousTicker: null | IQuoteTicker;
+  symbol: IQuoteTickerSymbol;
 }
 
 const QuoteTableRow = memo(
-  ({ ticker, previousTicker, symbol }: QuoteTableRowProps) => {
+  ({ ticker, previousTicker, symbol }: IQuoteTableRowProps) => {
     return (
       <tr key={ticker.symbol}>
         {quoteTableFields.map(tableField => {
@@ -26,6 +26,8 @@ const QuoteTableRow = memo(
                 break;
               case 1:
                 extClasses = quoteTableClasses.cellValueUp;
+                break;
+              default:
                 break;
             }
           }

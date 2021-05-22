@@ -3,7 +3,7 @@ import { WebSocketApp, getWebsocketMock } from '../index';
 describe('Test websocket mock', () => {
   it('Default use', () => {
     const wsMock = getWebsocketMock();
-    const testFn = (ws: WebSocketApp) => {
+    const testFn = (ws: WebSocketApp): void => {
       ws.addEventListener('message', () => {});
       ws.send('test');
       ws.close();

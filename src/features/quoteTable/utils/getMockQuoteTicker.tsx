@@ -1,8 +1,8 @@
-import { QuoteTicker } from '../interfaces';
+import { IQuoteTicker } from '../interfaces';
 
 let id = 0;
 
-export default function getMockQuoteTicker(): QuoteTicker {
+export default function getMockQuoteTicker(): IQuoteTicker {
   const currentId = ++id;
 
   return {

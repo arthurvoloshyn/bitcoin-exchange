@@ -1,11 +1,10 @@
 import { getMockQuoteTickerSymbol } from 'features/quoteTable/utils';
-import { QuoteTickerSymbol } from '../../interfaces';
-import { getWebsocketMock, MockWebsocket } from '../../../../utils';
+import { getWebsocketMock, IMockWebsocket } from '../../../../utils';
 import getSymbols from '../getSymbols';
 import { REQUEST_IDS } from '../interfaces';
 
 describe('Test get symbols api', () => {
-  let ws: MockWebsocket;
+  let ws: IMockWebsocket;
 
   beforeEach(() => {
     ws = getWebsocketMock();

@@ -1,7 +1,7 @@
-import { QuoteTickerSymbol } from '../interfaces';
+import { IQuoteTickerSymbol } from '../interfaces';
 
 let id = 0;
-function getQuoteTickerSymbol(currentId?: string): QuoteTickerSymbol {
+function getQuoteTickerSymbol(currentId?: string): IQuoteTickerSymbol {
   if (!currentId) {
     currentId = new Array(6).fill(++id).join('');
   }

@@ -1,13 +1,13 @@
-import { QuoteTicker } from './interfaces';
+import { IQuoteTicker } from './interfaces';
 
-interface TableField {
+interface ITableField {
   title: string;
-  field: keyof QuoteTicker;
-  compare(a: QuoteTicker, b: QuoteTicker): number;
+  field: keyof IQuoteTicker;
+  compare(a: IQuoteTicker, b: IQuoteTicker): number;
 }
 
-function getCompareNumber(field: keyof QuoteTicker): TableField['compare'] {
-  return (a: QuoteTicker, b: QuoteTicker) => {
+function getCompareNumber(field: keyof IQuoteTicker): ITableField['compare'] {
+  return (a: IQuoteTicker, b: IQuoteTicker) => {
     if (Number(a[field]) > Number(b[field])) {
       return 1;
     }
@@ -19,7 +19,7 @@ function getCompareNumber(field: keyof QuoteTicker): TableField['compare'] {
   };
 }
 
-const quoteTableFields: TableField[] = [
+const quoteTableFields: ITableField[] = [
   {
     title: 'Ticker',
     field: 'symbol',
