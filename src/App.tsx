@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import QuoteTable from './features/quoteTable/QuoteTableContainer';
+import QuoteTickersControls from './features/quoteTable/controls/QuoteTickersControls';
+
 import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img alt="logo" className="App-logo" src={logo} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-lg">
+      <div className="row pt-3">
+        <div className="col">
+          <QuoteTickersControls />
+        </div>
+      </div>
+      <div className="row pt-3">
+        <div className="col-12">
+          <QuoteTable />
+        </div>
+      </div>
     </div>
   );
 };

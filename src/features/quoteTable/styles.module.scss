@@ -1,0 +1,26 @@
+.quoteTable {
+  th {
+    cursor: pointer;
+  }
+}
+
+.thSortDown,
+.thSortUp {
+  &:after {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 0.6em;
+  }
+}
+
+.thSortDown {
+  &:after {
+    content: '▼';
+  }
+}
+
+.thSortUp {
+  &:after {
+    content: '▲';
+  }
+}
