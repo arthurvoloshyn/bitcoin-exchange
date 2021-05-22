@@ -4,10 +4,12 @@
     "git add"
   ],
   "**/*.+(ts|tsx)": [
+    "eslint --fix --max-warnings=0",
     "git add"
   ],
   "**/*.+(scss)": [
     "prettier --parser scss --write",
+    "stylelint --fix --syntax scss --max-warnings=0",
     "git add"
   ]
 }
