@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classNames'; // eslint-disable-line import/no-unresolved
 
 import QUOTE_TABLE_CLASSES from '../../../constants/quoteTableClasses';
 import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
@@ -17,12 +16,10 @@ const QuoteTableView: React.FC<IQuoteTableViewProps> = ({
   sortParams,
   dispatch,
 }) => {
-  const tableClasses = classNames('table table-striped', styles.quoteTable, {
-    [QUOTE_TABLE_CLASSES.DARK.TABLE]: themeDark,
-  });
+  const tableClasses = themeDark ? QUOTE_TABLE_CLASSES.DARK.TABLE : '';
 
   return (
-    <table className={tableClasses}>
+    <table className={`table table-striped ${styles.quoteTable} ${tableClasses}`}>
       <QuoteTableHead dispatch={dispatch} sortParams={sortParams} />
       <tbody>
         {data.map(ticker => {
