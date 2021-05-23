@@ -1,7 +1,7 @@
 import React from 'react';
 import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
 import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
-import quoteTableClasses from '../../../constants/quoteTableClasses';
+import QUOTE_TABLE_CLASSES from '../../../constants/quoteTableClasses';
 import QuoteTableHead from '../QuoteTableHead/QuoteTableHead';
 import { AppDispatch } from '../../../state/store';
 import styles from '../../../styles/styles.module.scss';
@@ -30,7 +30,7 @@ const QuoteTableView: React.FC<IQuoteTableViewProps> = ({
   return (
     <table
       className={`table table-striped ${styles.quoteTable} ${
-        themeDark ? quoteTableClasses.dark.table : ''
+        themeDark ? QUOTE_TABLE_CLASSES.DARK.TABLE : ''
       }`}
     >
       <QuoteTableHead dispatch={dispatch} sortParams={sortParams} />

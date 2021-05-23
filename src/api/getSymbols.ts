@@ -14,8 +14,8 @@ export default function getSymbols(ws: WebSocketApp): Promise<IQuoteTickerSymbol
     ws.addEventListener('message', msgSymbolsHandler);
     ws.send(
       JSON.stringify({
-        id: REQUEST_IDS.getSymbols,
-        method: REQUEST_IDS.getSymbols,
+        id: REQUEST_IDS.GET_SYMBOLS,
+        method: REQUEST_IDS.GET_SYMBOLS,
       }),
     );
   });

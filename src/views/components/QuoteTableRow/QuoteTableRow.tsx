@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import quoteTableFields from '../../../constants/tableFields';
+import QUOTE_TABLE_FIELDS from '../../../constants/tableFields';
 import { IQuoteTicker, IQuoteTickerSymbol } from '../../../types/features';
-import quoteTableClasses from '../../../constants/quoteTableClasses';
+import QUOTE_TABLE_CLASSES from '../../../constants/quoteTableClasses';
 
 interface IQuoteTableRowProps {
   ticker: IQuoteTicker;
@@ -12,7 +12,7 @@ interface IQuoteTableRowProps {
 const QuoteTableRow: React.FC<IQuoteTableRowProps> = ({ ticker, previousTicker, symbol }) => {
   return (
     <tr key={ticker.symbol}>
-      {quoteTableFields.map(tableField => {
+      {QUOTE_TABLE_FIELDS.map(tableField => {
         let extClasses = '';
         let value = ticker[tableField.field];
 
@@ -21,10 +21,10 @@ const QuoteTableRow: React.FC<IQuoteTableRowProps> = ({ ticker, previousTicker, 
         } else if (previousTicker !== null) {
           switch (tableField.compare(ticker, previousTicker)) {
             case -1:
-              extClasses = quoteTableClasses.cellValueDawn;
+              extClasses = QUOTE_TABLE_CLASSES.CELL_VALUE_DOWN;
               break;
             case 1:
-              extClasses = quoteTableClasses.cellValueUp;
+              extClasses = QUOTE_TABLE_CLASSES.CELL_VALUE_UP;
               break;
             default:
               break;

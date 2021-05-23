@@ -1,6 +1,7 @@
 import React from 'react';
-import QuoteTickersControls from './QuoteTickersControls';
+
 import { getTestProvider } from '../../../utils';
+import QuoteTickersControls from './QuoteTickersControls';
 
 export default {
   title: 'feature/QuoteTable/Controls',
@@ -9,7 +10,7 @@ export default {
 
 const { TestProvider } = getTestProvider();
 
-export const DefaultUse = (): React.ReactElement => (
+export const DefaultUse: React.VFC = () => (
   <TestProvider>
     <QuoteTickersControls />
   </TestProvider>

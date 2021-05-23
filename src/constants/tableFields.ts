@@ -7,7 +7,7 @@ interface ITableField {
   compare: SortByField;
 }
 
-const quoteTableFields: ITableField[] = [
+const QUOTE_TABLE_FIELDS: ITableField[] = [
   {
     title: 'Ticker',
     field: 'symbol',
@@ -40,4 +40,4 @@ const quoteTableFields: ITableField[] = [
   },
 ];
 
-export default quoteTableFields;
+export default QUOTE_TABLE_FIELDS;

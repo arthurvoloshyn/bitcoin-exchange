@@ -3,7 +3,7 @@ import { IQuoteTickerSymbol, IQuoteTicker } from '../types/features';
 import REQUEST_IDS from '../constants/requestIds';
 
 interface ITickerSubscribeResponse {
-  id: REQUEST_IDS.subscribeTicker;
+  id: REQUEST_IDS.SUBSCRIBE_TICKER;
   result: boolean;
 }
 
@@ -44,8 +44,8 @@ export default function getInitialTickers(
     totalTickers.forEach(symbolData =>
       ws.send(
         JSON.stringify({
-          id: REQUEST_IDS.subscribeTicker,
-          method: REQUEST_IDS.subscribeTicker,
+          id: REQUEST_IDS.SUBSCRIBE_TICKER,
+          method: REQUEST_IDS.SUBSCRIBE_TICKER,
           params: {
             symbol: symbolData.id,
           },

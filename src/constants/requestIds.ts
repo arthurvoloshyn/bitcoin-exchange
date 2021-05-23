@@ -1,6 +1,6 @@
 enum REQUEST_IDS {
-  getSymbols = 'getSymbols',
-  subscribeTicker = 'subscribeTicker',
+  GET_SYMBOLS = 'getSymbols',
+  SUBSCRIBE_TICKER = 'subscribeTicker',
 }
 
 export default REQUEST_IDS;

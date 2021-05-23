@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSortByField } from '../../../utils';
+
+import { getSortedTickers } from '../../../utils';
 import { tickersSelector } from '../../../state/ducks/quoteTable/selectors';
-import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
 import tickerQueue from '../../../api/tickerQueue';
 import { tickersWs } from '../../../api/socketConnect';
+import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
 
-const sortByLastDown = getSortByField('last', 'down');
+import { ITickersState } from '../../../state/ducks/quoteTable/tickersSlice';
+import { WebSocketApp } from '../../../types/utils';
+import { IQuoteTicker } from '../../../types/features';
 
 const QuoteTable: React.FC = () => {
   const dispatch = useDispatch();
   const tickersState = useSelector(tickersSelector);
-  const sortParams = tickersState.sortType;
+  const { sortType: sortParams }: ITickersState = tickersState;
 
   useEffect(() => {
-    const ws = tickersWs();
+    const ws: WebSocketApp = tickersWs();
 
     tickerQueue(ws, dispatch);
 
@@ -23,19 +26,11 @@ const QuoteTable: React.FC = () => {
     };
   }, [dispatch]);
 
-  let data = [...tickersState.data];
-
-  data = data.sort(sortByLastDown);
-
-  if (tickersState.onLimit50) {
-    data = data.slice(0, 49);
-  }
-
-  data = data.sort(getSortByField(sortParams.field, sortParams.type));
+  const sortedTickers: IQuoteTicker[] = getSortedTickers(tickersState, sortParams);
 
   return (
     <QuoteTableView
-      data={data}
+      data={sortedTickers}
       dispatch={dispatch}
       previousData={tickersState.previousData}
       sortParams={sortParams}

@@ -1,5 +1,5 @@
 import React from 'react';
-import quoteTableFields from '../../../constants/tableFields';
+import QUOTE_TABLE_FIELDS from '../../../constants/tableFields';
 import { ISortParams } from '../../../types/features';
 import { AppDispatch } from '../../../state/store';
 import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
@@ -14,7 +14,7 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }
   return (
     <thead>
       <tr>
-        {quoteTableFields.map(tableField => {
+        {QUOTE_TABLE_FIELDS.map(tableField => {
           let sortClass = '';
 
           if (tableField.field === sortParams.field) {
