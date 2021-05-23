@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import ENV from './constants/environment';
-import { store } from './state/store';
+import store from './state/store';
 import App from './App';
 
 import './index.css';

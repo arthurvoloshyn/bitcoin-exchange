@@ -1,5 +1,5 @@
 import { WebSocketApp } from '../types/utils';
-import { AppDispatch } from '../state/store';
+import { AppDispatch } from '../types/store';
 import { IQuoteTicker } from '../types/features';
 import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
 

@@ -1,13 +1,11 @@
-import { createAction, PrepareAction } from '@reduxjs/toolkit';
+import { createAction } from '@reduxjs/toolkit';
+
 import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
-
-type SetUpdateTickersPayload = Map<string, IQuoteTicker>;
-
-interface ICreateActionTickerPayload {
-  (tickersMap: SetUpdateTickersPayload): ReturnType<PrepareAction<IQuoteTicker[]>>;
-}
-
-type PrepareTickersMap = { payload: IQuoteTicker[] };
+import {
+  ICreateActionTickerPayload,
+  PrepareTickersMap,
+  SetUpdateTickersPayload,
+} from '../../../types/actions';
 
 const prepareTickersMap = (tickersMap: SetUpdateTickersPayload): PrepareTickersMap => {
   const result: IQuoteTicker[] = [];

@@ -7,7 +7,7 @@ import tickerQueue from '../../../api/tickerQueue';
 import { tickersWs } from '../../../api/socketConnect';
 import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
 
-import { ITickersState } from '../../../state/ducks/quoteTable/tickersSlice';
+import { ITickersState } from '../../../types/slices';
 import { WebSocketApp } from '../../../types/utils';
 import { IQuoteTicker } from '../../../types/features';
 

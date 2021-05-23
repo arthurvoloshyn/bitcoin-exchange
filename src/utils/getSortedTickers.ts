@@ -1,4 +1,4 @@
-import { ITickersState } from '../state/ducks/quoteTable/tickersSlice';
+import { ITickersState } from '../types/slices';
 import { IQuoteTicker, ISortParams, SortByField } from '../types/features';
 import { getSortByField } from './index';
 

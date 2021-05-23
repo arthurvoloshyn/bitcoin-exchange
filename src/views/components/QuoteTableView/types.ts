@@ -1,4 +1,4 @@
-import { AppDispatch } from '../../../state/store';
+import { AppDispatch } from '../../../types/store';
 import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
 
 export type PreviousData = { [symbolId: string]: IQuoteTicker };

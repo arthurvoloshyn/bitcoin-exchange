@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classNames'; // eslint-disable-line import/no-unresolved
 
 import QUOTE_TABLE_FIELDS from '../../../constants/tableFields';
 import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
@@ -12,11 +13,11 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }
   <thead>
     <tr>
       {QUOTE_TABLE_FIELDS.map((tableField: ITableField) => {
-        let sortClass = '';
-
-        if (tableField.field === sortParams.field) {
-          sortClass = sortParams.type === 'up' ? styles.thSortUp : styles.thSortDown;
-        }
+        const isEqualFields: boolean = tableField.field === sortParams.field;
+        const sortClasses = classNames('', {
+          [styles.thSortUp]: isEqualFields && sortParams.type === 'up',
+          [styles.thSortDown]: isEqualFields && sortParams.type !== 'up',
+        });
 
         const handleClick = (): void => {
           dispatch(
@@ -29,7 +30,7 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }
         };
 
         return (
-          <th key={tableField.field} className={sortClass} onClick={handleClick}>
+          <th key={tableField.field} className={sortClasses} onClick={handleClick}>
             {tableField.title}
           </th>
         );

@@ -1,19 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
+
 import tickersActions from './actions';
 
-export interface ITickersState {
-  data: IQuoteTicker[];
-  previousData: {
-    [id: string]: IQuoteTicker;
-  };
-  symbols: {
-    [id: string]: IQuoteTickerSymbol;
-  };
-  onLimit50: boolean;
-  sortType: ISortParams;
-  isDarkTheme: boolean;
-}
+import { ITickersState } from '../../../types/slices';
 
 export const initialTickersState: ITickersState = {
   data: [],

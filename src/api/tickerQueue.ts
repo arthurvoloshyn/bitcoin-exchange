@@ -1,5 +1,5 @@
 import { WebSocketApp } from '../types/utils';
-import { AppDispatch } from '../state/store';
+import { AppDispatch } from '../types/store';
 import getSymbols from './getSymbols';
 import getInitialTickers from './getInitialTickers';
 import updateTicker from './updateTicker';
