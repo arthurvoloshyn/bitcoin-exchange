@@ -269,6 +269,7 @@
     "import/no-webpack-loader-syntax": "error",
     "import/no-cycle": "off",
     "import/no-unresolved": "error",
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": ["**/*.stories.tsx"] }],
     "import/extensions": "off",
 
     "node/no-deprecated-api": "error",
