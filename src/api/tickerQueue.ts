@@ -1,4 +1,4 @@
-import { WebSocketApp } from '../../../utils/types';
+import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../state/store';
 import getSymbols from './getSymbols';
 import getInitialTickers from './getInitialTickers';

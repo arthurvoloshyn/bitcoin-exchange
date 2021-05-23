@@ -1,6 +1,6 @@
 import React from 'react';
 import QuoteTickersControls from './QuoteTickersControls';
-import { getTestProvider } from '../../../utils/getTestProvider';
+import { getTestProvider } from '../../../utils';
 
 export default {
   title: 'feature/QuoteTable/Controls',

@@ -1,4 +1,4 @@
-import { IQuoteTicker } from '../../../types/interfaces';
+import { IQuoteTicker } from '../types/features';
 
 let id = 0;
 

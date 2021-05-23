@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import QuoteTableView, { IQuoteTableViewProps } from './QuoteTableView';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../../utils';
-import { IQuoteTickerSymbolMap } from '../../../types/interfaces';
+import { IQuoteTickerSymbolMap } from '../../../types/features';
 
 export default {
   title: 'features/QuoteTableView',

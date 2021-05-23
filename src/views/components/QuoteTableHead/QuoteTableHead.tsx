@@ -1,6 +1,6 @@
 import React from 'react';
 import quoteTableFields from '../../../constants/tableFields';
-import { ISortParams } from '../../../types/interfaces';
+import { ISortParams } from '../../../types/features';
 import { AppDispatch } from '../../../state/store';
 import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
 import styles from '../../../styles/styles.module.scss';

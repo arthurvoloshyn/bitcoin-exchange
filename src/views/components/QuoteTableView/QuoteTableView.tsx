@@ -1,5 +1,5 @@
 import React from 'react';
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
 import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
 import quoteTableClasses from '../../../constants/quoteTableClasses';
 import QuoteTableHead from '../QuoteTableHead/QuoteTableHead';

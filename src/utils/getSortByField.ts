@@ -1,4 +1,4 @@
-import { QuoteTickerFields, SortType, IQuoteTicker, SortByField } from '../../../types/interfaces';
+import { QuoteTickerFields, SortType, IQuoteTicker, SortByField } from '../types/features';
 
 const getSortByField = (field: QuoteTickerFields, sortType?: SortType): SortByField => {
   return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {

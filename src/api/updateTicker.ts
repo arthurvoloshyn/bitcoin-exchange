@@ -1,6 +1,6 @@
-import { WebSocketApp } from '../../../utils/types';
+import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../state/store';
-import { IQuoteTicker } from '../../../types/interfaces';
+import { IQuoteTicker } from '../types/features';
 import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
 
 const updateInterval = 42; // in ms
