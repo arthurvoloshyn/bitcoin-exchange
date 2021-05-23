@@ -1,6 +1,7 @@
+import { getSortByField } from './index';
+
 import { ITickersState } from '../types/slices';
 import { IQuoteTicker, ISortParams, SortByField } from '../types/features';
-import { getSortByField } from './index';
 
 const getSortedTickers = (tickersState: ITickersState, sortParams: ISortParams): IQuoteTicker[] => {
   const sortByLastDown: SortByField = getSortByField('last', 'down');

@@ -9,3 +9,5 @@ export interface ITableField {
   field: keyof IQuoteTicker;
   compare: SortByField;
 }
+
+export type Environment = { IS_PROD: boolean; IS_DEV: boolean };

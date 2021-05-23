@@ -1,13 +1,13 @@
+import PATHS from '../constants/paths';
+
 import { WebSocketApp } from '../types/utils';
 
-export function tickersWs(): WebSocketApp {
-  return new WebSocket('wss://api.exchange.bitcoin.com/api/2/ws');
-}
+export const tickersWs = (): WebSocketApp => new WebSocket(`${PATHS.BASE_PATH}${PATHS.WS_PATH}`);
 
-export default function socketConnect(ws: WebSocketApp): Promise<WebSocketApp> {
+const socketConnect = (ws: WebSocketApp): Promise<WebSocketApp> => {
   return new Promise<WebSocketApp>(resolve => {
-    ws.addEventListener('open', () => {
-      resolve();
-    });
+    ws.addEventListener('open', () => resolve());
   });
-}
+};
+
+export default socketConnect;

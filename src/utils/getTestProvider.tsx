@@ -1,16 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { MockStore } from 'redux-mock-store';
 
 import ENV from '../constants/environment';
 import getTestStore from './getTestStore';
 
-type TestProvider = { TestProvider: React.FC; store: MockStore };
+import { ITestProvider } from '../types/utils';
 
-const getTestProvider = (initState = {}): TestProvider => {
+const getTestProvider = (initState: any = {}): ITestProvider => {
   const store = getTestStore(initState);
 
-  const TestProvider: React.FC = ({ children }: React.PropsWithChildren<any>) => (
+  const TestProvider: React.FC<React.PropsWithChildren<any>> = ({ children }) => (
     <Provider store={store}>{children}</Provider>
   );
 

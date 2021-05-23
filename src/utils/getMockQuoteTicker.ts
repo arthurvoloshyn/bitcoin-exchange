@@ -1,16 +1,29 @@
-import { IQuoteTicker } from '../types/features';
+import { IQuoteTicker, QuoteTickerFields } from '../types/features';
 
 let id = 0;
 
-export default function getMockQuoteTicker(): IQuoteTicker {
-  const currentId = ++id;
+const getMockQuoteTicker = (): IQuoteTicker => {
+  const currentId: number = ++id;
 
-  return {
+  const getRandom = (): string => `${currentId * 10 + Math.random()}`;
+
+  const quoteTicker = {
     symbol: new Array(4).fill(currentId).join(''),
-    bid: String(currentId * 10 + Math.random()),
-    ask: String(currentId * 10 + Math.random()),
-    high: String(currentId * 10 + Math.random()),
-    low: String(currentId * 10 + Math.random()),
-    last: String(currentId * 10 + Math.random()),
-  };
-}
+  } as IQuoteTicker;
+
+  const quoteTickerFields: Exclude<QuoteTickerFields, 'symbol'>[] = [
+    'bid',
+    'ask',
+    'high',
+    'low',
+    'last',
+  ];
+
+  quoteTickerFields.forEach((quoteTickerField: QuoteTickerFields) => {
+    quoteTicker[quoteTickerField] = getRandom();
+  });
+
+  return quoteTicker;
+};
+
+export default getMockQuoteTicker;

@@ -1,8 +1,9 @@
-import { IQuoteTickerSymbol } from '../types/features';
-import { WebSocketApp } from '../types/utils';
 import REQUEST_IDS from '../constants/requestIds';
 
-export default function getSymbols(ws: WebSocketApp): Promise<IQuoteTickerSymbol[]> {
+import { IQuoteTickerSymbol } from '../types/features';
+import { WebSocketApp } from '../types/utils';
+
+const getSymbols = (ws: WebSocketApp): Promise<IQuoteTickerSymbol[]> => {
   return new Promise<IQuoteTickerSymbol[]>(resolve => {
     const msgSymbolsHandler = ({ data }: MessageEvent): void => {
       const msg = JSON.parse(data);
@@ -19,4 +20,6 @@ export default function getSymbols(ws: WebSocketApp): Promise<IQuoteTickerSymbol
       }),
     );
   });
-}
+};
+
+export default getSymbols;

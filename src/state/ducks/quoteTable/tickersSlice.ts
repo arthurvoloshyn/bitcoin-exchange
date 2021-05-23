@@ -3,6 +3,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import tickersActions from './actions';
 
 import { ITickersState } from '../../../types/slices';
+import { IQuoteTicker, IQuoteTickerSymbol } from '../../../types/features';
 
 export const initialTickersState: ITickersState = {
   data: [],
@@ -19,7 +20,7 @@ export const initialTickersState: ITickersState = {
 const reducer = createReducer(initialTickersState, builder => {
   builder
     .addCase(tickersActions.tickers.set, ({ data }, { payload: tickersCache }) => {
-      tickersCache.forEach(ticker => {
+      tickersCache.forEach((ticker: IQuoteTicker) => {
         data.push(ticker);
       });
     })
@@ -27,7 +28,7 @@ const reducer = createReducer(initialTickersState, builder => {
       Object.keys(previousData).forEach(id => delete previousData[id]);
 
       tickersCache.forEach(ticker => {
-        const existIndex = data.findIndex(existTicker => existTicker.symbol === ticker.symbol);
+        const existIndex: number = data.findIndex(({ symbol }) => symbol === ticker.symbol);
 
         if (existIndex !== -1) {
           previousData[ticker.symbol] = { ...data[existIndex] };
@@ -38,7 +39,7 @@ const reducer = createReducer(initialTickersState, builder => {
       });
     })
     .addCase(tickersActions.symbols.set, ({ symbols }, { payload }) => {
-      payload.forEach(symbol => {
+      payload.forEach((symbol: IQuoteTickerSymbol) => {
         symbols[symbol.id] = symbol;
       });
     })

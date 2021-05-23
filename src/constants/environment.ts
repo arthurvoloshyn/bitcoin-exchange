@@ -1,6 +1,6 @@
-const { NODE_ENV } = process.env;
+import { Environment } from '../types/constants';
 
-type Environment = { IS_PROD: boolean; IS_DEV: boolean };
+const { NODE_ENV } = process.env;
 
 const ENV: Environment = {
   IS_PROD: NODE_ENV === 'production',

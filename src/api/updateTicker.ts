@@ -1,23 +1,26 @@
+import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
+
 import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../types/store';
 import { IQuoteTicker } from '../types/features';
-import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
 
-const updateInterval = 42; // in ms
+const updateIntervalMs = 42;
 
-export default function updateTicker(ws: WebSocketApp, dispatch: AppDispatch): void {
-  const tickerCache = new Map();
-  let controlPoint = Date.now();
+const updateTicker = (ws: WebSocketApp, dispatch: AppDispatch): void => {
+  const tickerCache = new Map<string, IQuoteTicker>();
+  let controlPoint: number = Date.now();
 
-  ws.addEventListener('message', ({ data }) => {
-    const ticker = JSON.parse(data).params as IQuoteTicker;
+  ws.addEventListener('message', ({ data }: MessageEvent) => {
+    const ticker: IQuoteTicker = JSON.parse(data).params;
 
     tickerCache.set(ticker.symbol, ticker);
 
-    if (Date.now() - controlPoint > updateInterval) {
+    if (Date.now() - controlPoint > updateIntervalMs) {
       dispatch(tickersSlice.actions.tickers.update(tickerCache));
       controlPoint = Date.now();
       tickerCache.clear();
     }
   });
-}
+};
+
+export default updateTicker;
