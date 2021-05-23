@@ -1,8 +1,8 @@
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../utils';
-import { IQuoteTicker } from '../../interfaces';
+import { IQuoteTicker } from '../../../../types/interfaces';
 import getInitialTickers from '../getInitialTickers';
-import { getWebsocketMock } from '../../../../utils';
-import { REQUEST_IDS } from '../interfaces';
+import { getWebsocketMock } from '../../../../utils/types';
+import { REQUEST_IDS } from '../types/interfaces';
 
 describe('Test get initial tickers', () => {
   const testTickers = [getMockQuoteTicker(), getMockQuoteTicker()];

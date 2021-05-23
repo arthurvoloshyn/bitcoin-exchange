@@ -3,7 +3,7 @@ import React from 'react';
 import QuoteTable from './views/containers/QuoteTable/QuoteTable';
 import QuoteTickersControls from './views/containers/QuoteTickersControls/QuoteTickersControls';
 
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 type Row = { id: string; component: React.FC };
 

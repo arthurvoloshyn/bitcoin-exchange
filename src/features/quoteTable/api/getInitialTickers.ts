@@ -1,6 +1,6 @@
-import { WebSocketApp } from '../../../utils';
-import { IQuoteTickerSymbol, IQuoteTicker } from '../interfaces';
-import { REQUEST_IDS } from './interfaces';
+import { WebSocketApp } from '../../../utils/types';
+import { IQuoteTickerSymbol, IQuoteTicker } from '../../../types/interfaces';
+import { REQUEST_IDS } from './types/interfaces';
 
 interface ITickerSubscribeResponse {
   id: REQUEST_IDS.subscribeTicker;
@@ -14,7 +14,7 @@ interface ITickerResponse {
 
 type SocketData = ITickerResponse | ITickerSubscribeResponse;
 
-function tickerGuard(msg: any): msg is ITickerResponse {
+function tickerGuard(msg: ITickerResponse): boolean {
   return msg.method === 'ticker';
 }
 

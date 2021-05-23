@@ -1,9 +1,5 @@
 import { createAction, PrepareAction } from '@reduxjs/toolkit';
-import {
-  IQuoteTicker,
-  IQuoteTickerSymbol,
-  ISortParams,
-} from '../../../features/quoteTable/interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/interfaces';
 
 type SetUpdateTickersPayload = Map<string, IQuoteTicker>;
 

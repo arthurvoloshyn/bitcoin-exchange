@@ -1,4 +1,4 @@
-import { IQuoteTicker, ISortParams } from '../../../../features/quoteTable/interfaces';
+import { IQuoteTicker, ISortParams } from '../../../../types/interfaces';
 import tickersSlice, { initialTickersState } from '../tickersSlice';
 import {
   getMockQuoteTicker,

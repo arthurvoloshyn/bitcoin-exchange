@@ -1,4 +1,4 @@
-import { WebSocketApp, getWebsocketMock } from '../index';
+import { WebSocketApp, getWebsocketMock } from '../types';
 
 describe('Test websocket mock', () => {
   it('Default use', () => {

@@ -1,6 +1,6 @@
 import { getMockQuoteTickerSymbol, getMockQuoteTicker } from '../../utils';
 import tickerQueue from '../tickerQueue';
-import { getWebsocketMock } from '../../../../utils';
+import { getWebsocketMock } from '../../../../utils/types';
 import getSymbols from '../getSymbols';
 import getInitialTickers from '../getInitialTickers';
 import updateTicker from '../updateTicker';

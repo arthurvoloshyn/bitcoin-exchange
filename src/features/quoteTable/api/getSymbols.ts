@@ -1,6 +1,6 @@
-import { IQuoteTickerSymbol } from '../interfaces';
-import { WebSocketApp } from '../../../utils';
-import { REQUEST_IDS } from './interfaces';
+import { IQuoteTickerSymbol } from '../../../types/interfaces';
+import { WebSocketApp } from '../../../utils/types';
+import { REQUEST_IDS } from './types/interfaces';
 
 export default function getSymbols(ws: WebSocketApp): Promise<IQuoteTickerSymbol[]> {
   return new Promise<IQuoteTickerSymbol[]>(resolve => {

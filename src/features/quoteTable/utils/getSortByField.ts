@@ -1,16 +1,16 @@
-import { QuoteTickerFields, SortType, IQuoteTicker } from '../interfaces';
+import { QuoteTickerFields, SortType, IQuoteTicker, SortByField } from '../../../types/interfaces';
 
-type SortField = (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => 1 | -1 | 0;
-
-const getSortByField = (field: QuoteTickerFields, sortType: SortType): SortField => {
+const getSortByField = (field: QuoteTickerFields, sortType?: SortType): SortByField => {
   return (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => {
     const fieldIsSymbol: boolean = field === 'symbol';
 
-    const a: string | number = fieldIsSymbol ? tickerA[field] : +tickerA[field];
-    const b: string | number = fieldIsSymbol ? tickerB[field] : +tickerB[field];
+    const fieldA: string | number = fieldIsSymbol ? tickerA[field] : +tickerA[field];
+    const fieldB: string | number = fieldIsSymbol ? tickerB[field] : +tickerB[field];
 
-    if (a > b) return sortType === 'up' ? 1 : -1;
-    if (a < b) return sortType === 'up' ? -1 : 1;
+    const upSortType: boolean = !sortType || sortType === 'up';
+
+    if (fieldA > fieldB) return upSortType ? 1 : -1;
+    if (fieldA < fieldB) return upSortType ? -1 : 1;
 
     return 0;
   };

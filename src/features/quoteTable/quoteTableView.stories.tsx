@@ -4,7 +4,7 @@ import QuoteTableView, {
   IQuoteTableViewProps,
 } from '../../views/components/QuoteTableView/QuoteTableView';
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from './utils';
-import { IQuoteTickerSymbolMap } from './interfaces';
+import { IQuoteTickerSymbolMap } from '../../types/interfaces';
 
 export default {
   title: 'features/QuoteTableView',

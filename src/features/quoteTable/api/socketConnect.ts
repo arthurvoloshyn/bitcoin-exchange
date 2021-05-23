@@ -1,4 +1,4 @@
-import { WebSocketApp } from '../../../utils';
+import { WebSocketApp } from '../../../utils/types';
 
 export function tickersWs(): WebSocketApp {
   return new WebSocket('wss://api.exchange.bitcoin.com/api/2/ws');

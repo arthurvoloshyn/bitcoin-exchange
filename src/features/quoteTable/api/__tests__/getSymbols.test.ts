@@ -1,7 +1,7 @@
 import { getMockQuoteTickerSymbol } from '../../utils';
-import { getWebsocketMock, IMockWebsocket } from '../../../../utils';
+import { getWebsocketMock, IMockWebsocket } from '../../../../utils/types';
 import getSymbols from '../getSymbols';
-import { REQUEST_IDS } from '../interfaces';
+import { REQUEST_IDS } from '../types/interfaces';
 
 describe('Test get symbols api', () => {
   let ws: IMockWebsocket;

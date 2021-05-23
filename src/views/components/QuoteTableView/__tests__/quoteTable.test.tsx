@@ -1,17 +1,18 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { byRole, byText } from 'testing-library-selector';
-import QuoteTableView, {
-  IQuoteTableViewProps,
-} from '../../../views/components/QuoteTableView/QuoteTableView';
-import quoteTableClasses from '../../../constants/quoteTableClasse';
-import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../utils';
+import QuoteTableView, { IQuoteTableViewProps } from '../QuoteTableView';
+import quoteTableClasses from '../../../../constants/quoteTableClasses';
+import {
+  getMockQuoteTicker,
+  getMockQuoteTickerSymbol,
+} from '../../../../features/quoteTable/utils';
 import {
   IQuoteTicker,
   IQuoteTickerSymbol,
   IQuoteTickerSymbolMap,
   ISortParams,
-} from '../interfaces';
+} from '../../../../types/interfaces';
 
 describe('Test QuoteTable', () => {
   let testTickers: IQuoteTicker[];

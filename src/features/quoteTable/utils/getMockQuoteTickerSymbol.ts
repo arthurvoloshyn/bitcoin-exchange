@@ -1,4 +1,4 @@
-import { IQuoteTickerSymbol } from '../interfaces';
+import { IQuoteTickerSymbol } from '../../../types/interfaces';
 
 let id = 0;
 function getQuoteTickerSymbol(currentId?: string): IQuoteTickerSymbol {

@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  IQuoteTicker,
-  IQuoteTickerSymbol,
-  ISortParams,
-} from '../../../features/quoteTable/interfaces';
+import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/interfaces';
 import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
-import quoteTableClasses from '../../../constants/quoteTableClasse';
+import quoteTableClasses from '../../../constants/quoteTableClasses';
 import QuoteTableHead from '../QuoteTableHead/QuoteTableHead';
 import { AppDispatch } from '../../../state/store';
-import styles from '../../../features/quoteTable/styles.module.scss';
+import styles from '../../../styles/styles.module.scss';
 
 export interface IQuoteTableViewProps {
   data: IQuoteTicker[];

@@ -29,3 +29,5 @@ export interface ISortParams {
 }
 
 export type SortType = 'up' | 'down';
+
+export type SortByField = (tickerA: IQuoteTicker, tickerB: IQuoteTicker) => 1 | -1 | 0;

@@ -1,6 +1,6 @@
 import { getMockQuoteTicker } from '../../utils';
-import { getWebsocketMock } from '../../../../utils';
-import { IQuoteTicker } from '../../interfaces';
+import { getWebsocketMock } from '../../../../utils/types';
+import { IQuoteTicker } from '../../../../types/interfaces';
 import updateTicker from '../updateTicker';
 
 describe('Test update ticker', () => {
