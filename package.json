@@ -12,9 +12,6 @@
     "react",
     "reactjs",
     "react-redux",
-    "jest",
-    "testing-library",
-    "react-testing-library",
     "typescript",
     "@reduxjs/toolkit",
     "storybook"
