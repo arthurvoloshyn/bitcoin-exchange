@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import quoteTableFields from '../../../features/quoteTable/tableFields';
+import quoteTableFields from '../../../constants/tableFields';
 import { IQuoteTicker, IQuoteTickerSymbol } from '../../../types/interfaces';
 import quoteTableClasses from '../../../constants/quoteTableClasse';
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import QuoteTableView, {
-  IQuoteTableViewProps,
-} from '../../views/components/QuoteTableView/QuoteTableView';
-import { getMockQuoteTicker, getMockQuoteTickerSymbol } from './utils';
-import { IQuoteTickerSymbolMap } from '../../types/interfaces';
+import QuoteTableView, { IQuoteTableViewProps } from './QuoteTableView';
+import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../../utils';
+import { IQuoteTickerSymbolMap } from '../../../types/interfaces';
 
 export default {
   title: 'features/QuoteTableView',

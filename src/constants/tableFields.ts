@@ -1,5 +1,5 @@
 import { IQuoteTicker, SortByField } from '../../types/interfaces';
-import getSortByField from './utils/getSortByField';
+import getSortByField from '../utils/getSortByField';
 
 interface ITableField {
   title: string;

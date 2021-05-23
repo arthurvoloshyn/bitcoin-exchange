@@ -1,6 +1,6 @@
 import { WebSocketApp } from '../../../utils/types';
 import { IQuoteTickerSymbol, IQuoteTicker } from '../../../types/interfaces';
-import { REQUEST_IDS } from './types/interfaces';
+import { REQUEST_IDS } from '../constants/interfaces';
 
 interface ITickerSubscribeResponse {
   id: REQUEST_IDS.subscribeTicker;
