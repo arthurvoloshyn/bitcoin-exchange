@@ -1,23 +1,13 @@
 import React from 'react';
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
-import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
-import QUOTE_TABLE_CLASSES from '../../../constants/quoteTableClasses';
-import QuoteTableHead from '../QuoteTableHead/QuoteTableHead';
-import { AppDispatch } from '../../../state/store';
-import styles from '../../../styles/styles.module.scss';
+import classNames from 'classNames'; // eslint-disable-line import/no-unresolved
 
-export interface IQuoteTableViewProps {
-  data: IQuoteTicker[];
-  previousData: {
-    [symbolId: string]: IQuoteTicker;
-  };
-  themeDark?: boolean;
-  symbolsMap: {
-    [id: string]: IQuoteTickerSymbol;
-  };
-  sortParams: ISortParams;
-  dispatch: AppDispatch;
-}
+import QUOTE_TABLE_CLASSES from '../../../constants/quoteTableClasses';
+import QuoteTableRow from '../QuoteTableRow/QuoteTableRow';
+import QuoteTableHead from '../QuoteTableHead/QuoteTableHead';
+
+import { IQuoteTableViewProps } from './types';
+
+import styles from '../../../styles/styles.module.scss';
 
 const QuoteTableView: React.FC<IQuoteTableViewProps> = ({
   data,
@@ -27,12 +17,12 @@ const QuoteTableView: React.FC<IQuoteTableViewProps> = ({
   sortParams,
   dispatch,
 }) => {
+  const tableClasses = classNames('table table-striped', styles.quoteTable, {
+    [QUOTE_TABLE_CLASSES.DARK.TABLE]: themeDark,
+  });
+
   return (
-    <table
-      className={`table table-striped ${styles.quoteTable} ${
-        themeDark ? QUOTE_TABLE_CLASSES.DARK.TABLE : ''
-      }`}
-    >
+    <table className={tableClasses}>
       <QuoteTableHead dispatch={dispatch} sortParams={sortParams} />
       <tbody>
         {data.map(ticker => {

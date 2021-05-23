@@ -4,6 +4,7 @@ import getSortByField from './getSortByField';
 import getTestStore from './getTestStore';
 import getTestProvider from './getTestProvider';
 import getSortedTickers from './getSortedTickers';
+import getExtClasses from './getExtClasses';
 
 export {
   getMockQuoteTicker,
@@ -12,4 +13,5 @@ export {
   getTestStore,
   getTestProvider,
   getSortedTickers,
+  getExtClasses,
 };

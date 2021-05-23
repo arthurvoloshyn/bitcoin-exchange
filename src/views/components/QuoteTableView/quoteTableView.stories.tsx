@@ -1,23 +1,24 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import QuoteTableView, { IQuoteTableViewProps } from './QuoteTableView';
+
 import { getMockQuoteTicker, getMockQuoteTickerSymbol } from '../../../utils';
-import { IQuoteTickerSymbolMap } from '../../../types/features';
+import QuoteTableView from './QuoteTableView';
+
+import { IQuoteTicker, IQuoteTickerSymbolMap } from '../../../types/features';
+import { IQuoteTableViewProps, PreviousData } from './types';
 
 export default {
   title: 'features/QuoteTableView',
   component: QuoteTableView,
 } as Meta;
 
-const data = [getMockQuoteTicker(), getMockQuoteTicker(), getMockQuoteTicker()];
-const previousData = {
+const data: IQuoteTicker[] = [getMockQuoteTicker(), getMockQuoteTicker(), getMockQuoteTicker()];
+const previousData: PreviousData = {
   [data[0].symbol]: { ...data[0], bid: '1000000', ask: '0.1' },
 };
 
-const symbolsMap = data
-  .map(ticker => {
-    return getMockQuoteTickerSymbol(ticker.symbol);
-  })
+const symbolsMap: IQuoteTickerSymbolMap = data
+  .map(({ symbol }) => getMockQuoteTickerSymbol(symbol))
   .reduce((map, symbol) => {
     map[symbol.id] = symbol;
 

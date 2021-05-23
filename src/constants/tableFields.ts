@@ -1,11 +1,6 @@
-import { IQuoteTicker, SortByField } from '../types/features';
 import getSortByField from '../utils/getSortByField';
 
-interface ITableField {
-  title: string;
-  field: keyof IQuoteTicker;
-  compare: SortByField;
-}
+import { ITableField } from '../types/constants';
 
 const QUOTE_TABLE_FIELDS: ITableField[] = [
   {

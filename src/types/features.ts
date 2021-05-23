@@ -9,6 +9,8 @@ export interface IQuoteTicker {
 
 export type QuoteTickerFields = keyof IQuoteTicker;
 
+export type PreviousTicker = null | IQuoteTicker;
+
 export interface IQuoteTickerSymbol {
   id: string;
   baseCurrency: string;
