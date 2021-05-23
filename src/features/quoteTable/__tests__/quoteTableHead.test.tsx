@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { byText } from 'testing-library-selector';
-import QuoteTableHead from '../QuoteTableHead';
+import QuoteTableHead from '../../../views/components/QuoteTableHead/QuoteTableHead';
 import quoteTableFields from '../tableFields';
 import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
 import styles from '../styles.module.scss';

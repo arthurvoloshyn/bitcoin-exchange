@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import quoteTableFields from './tableFields';
-import { IQuoteTicker, IQuoteTickerSymbol } from './interfaces';
-import quoteTableClasses from './quoteTableClasse';
+import quoteTableFields from '../../../features/quoteTable/tableFields';
+import { IQuoteTicker, IQuoteTickerSymbol } from '../../../features/quoteTable/interfaces';
+import quoteTableClasses from '../../../constants/quoteTableClasse';
 
 interface IQuoteTableRowProps {
   ticker: IQuoteTicker;

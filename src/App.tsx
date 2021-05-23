@@ -1,7 +1,7 @@
 import React from 'react';
 
-import QuoteTable from './features/quoteTable/QuoteTableContainer';
-import QuoteTickersControls from './features/quoteTable/controls/QuoteTickersControls';
+import QuoteTable from './views/containers/QuoteTable/QuoteTable';
+import QuoteTickersControls from './views/containers/QuoteTickersControls/QuoteTickersControls';
 
 import './App.css';
 

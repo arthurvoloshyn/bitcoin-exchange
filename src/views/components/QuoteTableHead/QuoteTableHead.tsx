@@ -1,9 +1,9 @@
 import React from 'react';
-import quoteTableFields from './tableFields';
-import { ISortParams } from './interfaces';
-import { AppDispatch } from '../../state/store';
-import tickersSlice from '../../state/ducks/quoteTable/tickersSlice';
-import styles from './styles.module.scss';
+import quoteTableFields from '../../../features/quoteTable/tableFields';
+import { ISortParams } from '../../../features/quoteTable/interfaces';
+import { AppDispatch } from '../../../state/store';
+import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
+import styles from '../../../features/quoteTable/styles.module.scss';
 
 interface IQuoteTableHeadProps {
   dispatch: AppDispatch;
