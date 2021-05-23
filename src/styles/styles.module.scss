@@ -4,6 +4,10 @@
   }
 }
 
+.th {
+  min-width: 160px;
+}
+
 .thSortDown,
 .thSortUp {
   &:after {
@@ -22,5 +26,21 @@
 .thSortUp {
   &:after {
     content: '▲';
+  }
+}
+
+.btn {
+  margin-bottom: 5px;
+}
+
+.error {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .errorText {
+    color: #8e2b2b;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 }

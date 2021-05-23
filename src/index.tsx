@@ -6,6 +6,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import ENV from './constants/environment';
 import store from './state/store';
+import ErrorBoundary from './views/components/ErrorBoundary/ErrorBoundary';
 import App from './App';
 
 import './index.css';
@@ -13,7 +14,9 @@ import './index.css';
 render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </Provider>
   </StrictMode>,
   document.getElementById('root'),

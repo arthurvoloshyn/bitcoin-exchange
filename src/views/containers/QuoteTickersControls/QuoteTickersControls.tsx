@@ -5,6 +5,8 @@ import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
 
 import { ControlsBtn } from './types';
 
+import styles from '../../../styles/styles.module.scss';
+
 const QuoteTickersControls: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -32,7 +34,7 @@ const QuoteTickersControls: React.FC = () => {
 
         return (
           <Fragment key={id}>
-            <button className="btn btn-primary" onClick={handleClick} type="button">
+            <button className={`btn btn-primary ${styles.btn}`} onClick={handleClick} type="button">
               {text}
             </button>
             {i !== BTNS.length - 1 && ' '}
