@@ -19,9 +19,11 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }
           [styles.thSortDown]: isEqualFields && sortParams.type !== 'up',
         });
 
+        const { setSortType } = tickersSlice.actions;
+
         const handleClick = (): void => {
           dispatch(
-            tickersSlice.actions.setSortType({
+            setSortType({
               type:
                 sortParams.field === tableField.field && sortParams.type === 'down' ? 'up' : 'down',
               field: tableField.field,

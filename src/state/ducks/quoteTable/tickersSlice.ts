@@ -17,14 +17,16 @@ export const initialTickersState: ITickersState = {
   isDarkTheme: false,
 };
 
+const { tickers, symbols, toggleDarkTheme, setSortType, toggleLimit } = tickersActions;
+
 const reducer = createReducer(initialTickersState, builder => {
   builder
-    .addCase(tickersActions.tickers.set, ({ data }, { payload: tickersCache }) => {
+    .addCase(tickers.set, ({ data }, { payload: tickersCache }) => {
       tickersCache.forEach((ticker: IQuoteTicker) => {
         data.push(ticker);
       });
     })
-    .addCase(tickersActions.tickers.update, ({ data, previousData }, { payload: tickersCache }) => {
+    .addCase(tickers.update, ({ data, previousData }, { payload: tickersCache }) => {
       Object.keys(previousData).forEach(id => delete previousData[id]);
 
       tickersCache.forEach(ticker => {
@@ -38,18 +40,18 @@ const reducer = createReducer(initialTickersState, builder => {
         }
       });
     })
-    .addCase(tickersActions.symbols.set, ({ symbols }, { payload }) => {
+    .addCase(symbols.set, ({ symbols }, { payload }) => {
       payload.forEach((symbol: IQuoteTickerSymbol) => {
         symbols[symbol.id] = symbol;
       });
     })
-    .addCase(tickersActions.toggleDarkTheme, state => {
+    .addCase(toggleDarkTheme, state => {
       state.isDarkTheme = !state.isDarkTheme;
     })
-    .addCase(tickersActions.setSortType, (state, { payload }) => {
+    .addCase(setSortType, (state, { payload }) => {
       state.sortType = payload;
     })
-    .addCase(tickersActions.toggleLimit, state => {
+    .addCase(toggleLimit, state => {
       state.onLimit50 = !state.onLimit50;
     });
 });

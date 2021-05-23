@@ -1,4 +1,5 @@
 import QUOTE_TABLE_CLASSES from '../constants/quoteTableClasses';
+import CELL_VALUE from '../constants/cellValue';
 
 import { ITableField } from '../types/constants';
 import { ExtClasses } from '../types/utils';
@@ -15,8 +16,8 @@ const getExtClasses = (
 
   if (tableField.field === 'symbol') value = `${symbol.baseCurrency} / ${symbol.feeCurrency}`;
 
-  const CELL_VALUE_DOWN = -1;
-  const CELL_VALUE_UP = 1;
+  const CELL_VALUE_DOWN: CELL_VALUE.DOWN = -1;
+  const CELL_VALUE_UP: CELL_VALUE.UP = 1;
 
   if (previousTicker !== null) {
     switch (tableField.compare(ticker, previousTicker)) {

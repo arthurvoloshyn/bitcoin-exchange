@@ -14,11 +14,13 @@ const tickerQueue = async (ws: WebSocketApp, dispatch: AppDispatch): Promise<voi
 
   const symbols: IQuoteTickerSymbol[] = await getSymbols(ws);
 
-  dispatch(tickersSlice.actions.symbols.set(symbols));
+  const { symbols: symbolsAction, tickers: tickersAction } = tickersSlice.actions;
+
+  dispatch(symbolsAction.set(symbols));
 
   const initialTickers: Map<string, IQuoteTicker> = await getInitialTickers(ws, symbols);
 
-  dispatch(tickersSlice.actions.tickers.set(initialTickers));
+  dispatch(tickersAction.set(initialTickers));
 
   updateTicker(ws, dispatch);
 };

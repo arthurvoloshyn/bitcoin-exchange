@@ -8,15 +8,17 @@ import { ControlsBtn } from './types';
 const QuoteTickersControls: React.FC = () => {
   const dispatch = useDispatch();
 
+  const { toggleLimit, toggleDarkTheme } = tickersSlice.actions;
+
   const BTNS: ControlsBtn[] = [
     {
       id: 'Limit tickers',
-      action: tickersSlice.actions.toggleLimit(),
+      action: toggleLimit(),
       text: 'On / Off Limit tickers',
     },
     {
       id: 'Dark Theme',
-      action: tickersSlice.actions.toggleDarkTheme(),
+      action: toggleDarkTheme(),
       text: 'On / Off Dark Theme',
     },
   ];

@@ -4,7 +4,7 @@ import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../types/store';
 import { IQuoteTicker } from '../types/features';
 
-const updateIntervalMs = 42;
+const updateIntervalMs = 50;
 
 const updateTicker = (ws: WebSocketApp, dispatch: AppDispatch): void => {
   const tickerCache = new Map<string, IQuoteTicker>();
@@ -16,7 +16,9 @@ const updateTicker = (ws: WebSocketApp, dispatch: AppDispatch): void => {
     tickerCache.set(ticker.symbol, ticker);
 
     if (Date.now() - controlPoint > updateIntervalMs) {
-      dispatch(tickersSlice.actions.tickers.update(tickerCache));
+      const { tickers } = tickersSlice.actions;
+
+      dispatch(tickers.update(tickerCache));
       controlPoint = Date.now();
       tickerCache.clear();
     }

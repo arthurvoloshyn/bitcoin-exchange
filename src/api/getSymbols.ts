@@ -2,11 +2,12 @@ import REQUEST_IDS from '../constants/requestIds';
 
 import { IQuoteTickerSymbol } from '../types/features';
 import { WebSocketApp } from '../types/utils';
+import { Symbols } from '../types/api';
 
 const getSymbols = (ws: WebSocketApp): Promise<IQuoteTickerSymbol[]> => {
   return new Promise<IQuoteTickerSymbol[]>(resolve => {
     const msgSymbolsHandler = ({ data }: MessageEvent): void => {
-      const msg = JSON.parse(data);
+      const msg: Symbols = JSON.parse(data);
 
       ws.removeEventListener('message', msgSymbolsHandler);
       resolve(msg.result);

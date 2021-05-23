@@ -1,6 +1,6 @@
 import REQUEST_IDS from '../constants/requestIds';
 
-import { IQuoteTicker } from './features';
+import { IQuoteTicker, IQuoteTickerSymbol } from './features';
 
 export interface ITickerSubscribeResponse {
   id: REQUEST_IDS.SUBSCRIBE_TICKER;
@@ -13,3 +13,5 @@ export interface ITickerResponse {
 }
 
 export type SocketData = ITickerResponse | ITickerSubscribeResponse;
+
+export type Symbols = { result: IQuoteTickerSymbol[] };
