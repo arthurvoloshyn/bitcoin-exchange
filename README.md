@@ -2,7 +2,7 @@
 
 Simple React Bitcoin Exchange Application
 
-[Demo](https://arturw1998.github.io/bitcoin-exchange/index)
+[Demo](https://arturw1998.github.io/bitcoin-exchange/)
 
 ### Provides
 
