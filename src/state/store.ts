@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 
 import ENV from '../constants/environment';
-import tickersSlice from './ducks/quoteTable/tickersSlice';
+import * as reducers from './ducks';
 
 const store = configureStore({
-  reducer: {
-    tickers: tickersSlice.reducer,
-  },
+  reducer: combineReducers(reducers),
   devTools: ENV.IS_DEV,
 });
 

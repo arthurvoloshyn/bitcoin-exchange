@@ -56,9 +56,4 @@ const reducer = createReducer(initialTickersState, builder => {
     });
 });
 
-const tickersSlice = {
-  reducer,
-  actions: tickersActions,
-};
-
-export default tickersSlice;
+export default reducer;

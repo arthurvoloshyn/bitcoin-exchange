@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getSortedTickers } from '../../../utils';
-import { tickersSelector } from '../../../state/ducks/quoteTable/selectors';
+import { quoteTableSelectors } from '../../../state/ducks/quoteTable';
 import tickerQueue from '../../../api/tickerQueue';
 import { tickersWs } from '../../../api/socketConnect';
 import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
@@ -13,7 +13,7 @@ import { IQuoteTicker } from '../../../types/features';
 
 const QuoteTable: React.FC = () => {
   const dispatch = useDispatch();
-  const tickersState = useSelector(tickersSelector);
+  const tickersState = useSelector(quoteTableSelectors.tickersSelector);
   const { sortType: sortParams }: ITickersState = tickersState;
 
   useEffect(() => {

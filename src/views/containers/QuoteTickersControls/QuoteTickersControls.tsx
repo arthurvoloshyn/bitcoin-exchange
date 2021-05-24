@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 
-import tickersSlice from '../../../state/ducks/quoteTable/tickersSlice';
+import { quoteTableActions } from '../../../state/ducks/quoteTable';
 
 import { ControlsBtn } from './types';
 
@@ -10,7 +10,7 @@ import styles from '../../../styles/styles.module.scss';
 const QuoteTickersControls: React.FC = () => {
   const dispatch = useDispatch();
 
-  const { toggleLimit, toggleDarkTheme } = tickersSlice.actions;
+  const { toggleLimit, toggleDarkTheme } = quoteTableActions;
 
   const BTNS: ControlsBtn[] = [
     {

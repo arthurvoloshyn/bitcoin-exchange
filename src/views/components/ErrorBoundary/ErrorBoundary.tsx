@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 
-import { ErrorBoundaryProps, ErrorBoundaryState, GetDerivedStateFromError } from './types';
+import { IErrorBoundaryProps, IErrorBoundaryState, GetDerivedStateFromError } from './types';
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoundaryState> {
   readonly state = {
     hasError: false,
   };

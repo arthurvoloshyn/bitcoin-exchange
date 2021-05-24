@@ -1,4 +1,4 @@
-import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
+import { quoteTableActions } from '../state/ducks/quoteTable';
 
 import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../types/store';
@@ -14,7 +14,7 @@ const tickerQueue = async (ws: WebSocketApp, dispatch: AppDispatch): Promise<voi
 
   const symbols: IQuoteTickerSymbol[] = await getSymbols(ws);
 
-  const { symbols: symbolsAction, tickers: tickersAction } = tickersSlice.actions;
+  const { symbols: symbolsAction, tickers: tickersAction } = quoteTableActions;
 
   dispatch(symbolsAction.set(symbols));
 
