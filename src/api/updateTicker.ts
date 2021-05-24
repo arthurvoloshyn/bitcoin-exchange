@@ -1,4 +1,4 @@
-import tickersSlice from '../state/ducks/quoteTable/tickersSlice';
+import { quoteTableActions } from '../state/ducks/quoteTable';
 
 import { WebSocketApp } from '../types/utils';
 import { AppDispatch } from '../types/store';
@@ -16,7 +16,7 @@ const updateTicker = (ws: WebSocketApp, dispatch: AppDispatch): void => {
     tickerCache.set(ticker.symbol, ticker);
 
     if (Date.now() - controlPoint > updateIntervalMs) {
-      const { tickers } = tickersSlice.actions;
+      const { tickers } = quoteTableActions;
 
       dispatch(tickers.update(tickerCache));
       controlPoint = Date.now();

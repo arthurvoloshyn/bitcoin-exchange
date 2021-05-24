@@ -1,11 +1,11 @@
 import React from 'react';
 
-export type ErrorBoundaryProps = {
+export interface IErrorBoundaryProps {
   children: React.ReactNode;
-};
+}
 
-export type ErrorBoundaryState = {
+export interface IErrorBoundaryState {
   hasError: boolean;
-};
+}
 
-export type GetDerivedStateFromError = Partial<ErrorBoundaryState> | null;
+export type GetDerivedStateFromError = Partial<IErrorBoundaryState> | null;
