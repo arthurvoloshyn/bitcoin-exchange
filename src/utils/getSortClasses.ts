@@ -1,3 +1,5 @@
+import SORT_DIRECTIONS from '../constants/sortDirections';
+
 import { ITableField } from '../types/constants';
 import { ISortParams } from '../types/features';
 
@@ -7,7 +9,7 @@ const getSortClasses = (tableField: ITableField, sortParams: ISortParams): strin
   let sortClasses = '';
 
   if (tableField.field === sortParams.field) {
-    sortClasses = sortParams.type === 'up' ? styles.thSortUp : styles.thSortDown;
+    sortClasses = sortParams.type === SORT_DIRECTIONS.UP ? styles.thSortUp : styles.thSortDown;
   }
 
   return sortClasses;

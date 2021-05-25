@@ -1,6 +1,7 @@
 import React from 'react';
 
 import QUOTE_TABLE_FIELDS from '../../../constants/tableFields';
+import SORT_DIRECTIONS from '../../../constants/sortDirections';
 import getSortClasses from '../../../utils/getSortClasses';
 import { quoteTableActions } from '../../../state/ducks/quoteTable';
 
@@ -18,7 +19,10 @@ const QuoteTableHead: React.FC<IQuoteTableHeadProps> = ({ dispatch, sortParams }
           const isEqualFields: boolean = sortParams.field === tableField.field;
 
           const payload: ISortParams = {
-            type: isEqualFields && sortParams.type === 'down' ? 'up' : 'down',
+            type:
+              isEqualFields && sortParams.type === SORT_DIRECTIONS.DOWN
+                ? SORT_DIRECTIONS.UP
+                : SORT_DIRECTIONS.DOWN,
             field: tableField.field,
           };
 

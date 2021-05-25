@@ -1,10 +1,11 @@
+import SORT_DIRECTIONS from '../constants/sortDirections';
 import { getSortByField } from './index';
 
 import { ITickersState } from '../types/slices';
 import { IQuoteTicker, ISortParams, SortByField } from '../types/features';
 
 const getSortedTickers = (tickersState: ITickersState, sortParams: ISortParams): IQuoteTicker[] => {
-  const sortByLastDown: SortByField = getSortByField('last', 'down');
+  const sortByLastDown: SortByField = getSortByField('last', SORT_DIRECTIONS.DOWN);
 
   let data: IQuoteTicker[] = [...tickersState.data];
 
