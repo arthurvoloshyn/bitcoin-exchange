@@ -1,5 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 
+import SORT_DIRECTIONS from '../../../constants/sortDirections';
 import tickersActions from './actions';
 
 import { ITickersState } from '../../../types/slices';
@@ -12,7 +13,7 @@ export const initialTickersState: ITickersState = {
   onLimit50: true,
   sortType: {
     field: 'last',
-    type: 'down',
+    type: SORT_DIRECTIONS.DOWN,
   },
   isDarkTheme: false,
 };

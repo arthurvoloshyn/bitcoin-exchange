@@ -1,4 +1,5 @@
 import CELL_VALUE from '../constants/cellValue';
+import SORT_DIRECTIONS from '../constants/sortDirections';
 
 export interface IQuoteTicker {
   symbol: string;
@@ -28,7 +29,7 @@ export interface ISortParams {
   type: SortType;
 }
 
-export type SortType = 'up' | 'down';
+export type SortType = SORT_DIRECTIONS.UP | SORT_DIRECTIONS.DOWN;
 
 export type SortByField = (
   tickerA: IQuoteTicker,
