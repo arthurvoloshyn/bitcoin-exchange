@@ -23,10 +23,6 @@ export interface IQuoteTickerSymbolMap {
   [id: string]: IQuoteTickerSymbol;
 }
 
-export interface IQuoteTickerMap {
-  [tickerSymbol: string]: IQuoteTicker;
-}
-
 export interface ISortParams {
   field: QuoteTickerFields;
   type: SortType;
@@ -37,4 +33,4 @@ export type SortType = 'up' | 'down';
 export type SortByField = (
   tickerA: IQuoteTicker,
   tickerB: IQuoteTicker,
-) => CELL_VALUE.UP | CELL_VALUE.DOWN | CELL_VALUE.NULL;
+) => CELL_VALUE.UP | CELL_VALUE.DOWN | CELL_VALUE.MIDDLE;
