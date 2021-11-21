@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/bitcoin-exchange/index/static/css/main.84164815.chunk.css",
-    "main.js": "/bitcoin-exchange/index/static/js/main.c1d554d8.chunk.js",
-    "main.js.map": "/bitcoin-exchange/index/static/js/main.c1d554d8.chunk.js.map",
-    "runtime-main.js": "/bitcoin-exchange/index/static/js/runtime-main.e4353bb9.js",
-    "runtime-main.js.map": "/bitcoin-exchange/index/static/js/runtime-main.e4353bb9.js.map",
-    "static/css/2.54c80412.chunk.css": "/bitcoin-exchange/index/static/css/2.54c80412.chunk.css",
-    "static/js/2.e1337e59.chunk.js": "/bitcoin-exchange/index/static/js/2.e1337e59.chunk.js",
-    "static/js/2.e1337e59.chunk.js.map": "/bitcoin-exchange/index/static/js/2.e1337e59.chunk.js.map",
-    "static/js/3.fbf7663e.chunk.js": "/bitcoin-exchange/index/static/js/3.fbf7663e.chunk.js",
-    "static/js/3.fbf7663e.chunk.js.map": "/bitcoin-exchange/index/static/js/3.fbf7663e.chunk.js.map",
-    "index.html": "/bitcoin-exchange/index/index.html",
-    "precache-manifest.2df9660f2c4681b48f9c25ab1f69941c.js": "/bitcoin-exchange/index/precache-manifest.2df9660f2c4681b48f9c25ab1f69941c.js",
-    "service-worker.js": "/bitcoin-exchange/index/service-worker.js",
-    "static/css/2.54c80412.chunk.css.map": "/bitcoin-exchange/index/static/css/2.54c80412.chunk.css.map",
-    "static/css/main.84164815.chunk.css.map": "/bitcoin-exchange/index/static/css/main.84164815.chunk.css.map",
-    "static/js/2.e1337e59.chunk.js.LICENSE.txt": "/bitcoin-exchange/index/static/js/2.e1337e59.chunk.js.LICENSE.txt"
+    "main.css": "/bitcoin-exchange/static/css/main.84164815.chunk.css",
+    "main.js": "/bitcoin-exchange/static/js/main.d68ef9e8.chunk.js",
+    "main.js.map": "/bitcoin-exchange/static/js/main.d68ef9e8.chunk.js.map",
+    "runtime-main.js": "/bitcoin-exchange/static/js/runtime-main.e73c2e15.js",
+    "runtime-main.js.map": "/bitcoin-exchange/static/js/runtime-main.e73c2e15.js.map",
+    "static/css/2.54c80412.chunk.css": "/bitcoin-exchange/static/css/2.54c80412.chunk.css",
+    "static/js/2.e1337e59.chunk.js": "/bitcoin-exchange/static/js/2.e1337e59.chunk.js",
+    "static/js/2.e1337e59.chunk.js.map": "/bitcoin-exchange/static/js/2.e1337e59.chunk.js.map",
+    "static/js/3.fbf7663e.chunk.js": "/bitcoin-exchange/static/js/3.fbf7663e.chunk.js",
+    "static/js/3.fbf7663e.chunk.js.map": "/bitcoin-exchange/static/js/3.fbf7663e.chunk.js.map",
+    "index.html": "/bitcoin-exchange/index.html",
+    "precache-manifest.afad1af52cba8f0ba84dc415ed065b22.js": "/bitcoin-exchange/precache-manifest.afad1af52cba8f0ba84dc415ed065b22.js",
+    "service-worker.js": "/bitcoin-exchange/service-worker.js",
+    "static/css/2.54c80412.chunk.css.map": "/bitcoin-exchange/static/css/2.54c80412.chunk.css.map",
+    "static/css/main.84164815.chunk.css.map": "/bitcoin-exchange/static/css/main.84164815.chunk.css.map",
+    "static/js/2.e1337e59.chunk.js.LICENSE.txt": "/bitcoin-exchange/static/js/2.e1337e59.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4353bb9.js",
+    "static/js/runtime-main.e73c2e15.js",
     "static/css/2.54c80412.chunk.css",
     "static/js/2.e1337e59.chunk.js",
     "static/css/main.84164815.chunk.css",
-    "static/js/main.c1d554d8.chunk.js"
+    "static/js/main.d68ef9e8.chunk.js"
   ]
 }
