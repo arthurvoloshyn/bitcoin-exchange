@@ -7,7 +7,7 @@ import styles from '../../../styles/styles.module.scss';
 const ErrorIndicator: React.FC<IErrorIndicatorProps> = ({ children, message }) => (
   <div className={styles.error}>
     <p className={styles.errorTitle}>Something went wrong!</p>
-    <p className={styles.errorMessage}>{message}</p>
+    {message && <p className={styles.errorMessage}>{message}</p>}
     {children}
   </div>
 );

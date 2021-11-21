@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { getSortedTickers } from '../../../utils';
-import { quoteTableSelectors } from '../../../state/ducks/quoteTable';
 import tickerQueue from '../../../api/tickerQueue';
 import { tickersWs } from '../../../api/socketConnect';
 import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
-import ErrorIndicator from '../../components/ErrorIndicator/ErrorIndicator';
 
 import { ITickersState } from '../../../types/slices';
 import { WebSocketApp } from '../../../types/utils';
 import { IQuoteTicker } from '../../../types/features';
+import { IQuoteTableProps } from './types';
 
-const QuoteTable: React.FC = () => {
+const QuoteTable: React.FC<IQuoteTableProps> = ({ tickersState }) => {
   const dispatch = useDispatch();
-  const tickersState = useSelector(quoteTableSelectors.tickersSelector);
   const { sortType: sortParams }: ITickersState = tickersState;
 
   useEffect(() => {
@@ -28,10 +26,6 @@ const QuoteTable: React.FC = () => {
   }, [dispatch]);
 
   const sortedTickers: IQuoteTicker[] = getSortedTickers(tickersState, sortParams);
-
-  if (tickersState.error) {
-    return <ErrorIndicator message={tickersState.error} />;
-  }
 
   return (
     <QuoteTableView
