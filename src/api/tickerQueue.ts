@@ -10,7 +10,7 @@ import socketConnect from './socketConnect';
 import { IQuoteTicker, IQuoteTickerSymbol } from '../types/features';
 
 const tickerQueue = async (ws: WebSocketApp, dispatch: AppDispatch): Promise<void> => {
-  await socketConnect(ws);
+  await socketConnect(ws, dispatch);
 
   const symbols: IQuoteTickerSymbol[] = await getSymbols(ws);
 

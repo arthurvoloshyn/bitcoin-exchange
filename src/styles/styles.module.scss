@@ -36,11 +36,17 @@
 .error {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
-  .errorText {
+  .errorTitle {
     color: #8e2b2b;
     font-size: 20px;
     margin-bottom: 20px;
+  }
+
+  .errorMessage {
+    margin-bottom: 20px;
+    max-width: 300px;
   }
 }

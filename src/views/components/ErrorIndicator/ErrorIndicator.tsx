@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { IErrorIndicatorProps } from './types';
+
 import styles from '../../../styles/styles.module.scss';
 
-const ErrorIndicator: React.FC = ({ children }) => (
+const ErrorIndicator: React.FC<IErrorIndicatorProps> = ({ children, message }) => (
   <div className={styles.error}>
-    <p className={styles.errorText}>Something went wrong!</p>
+    <p className={styles.errorTitle}>Something went wrong!</p>
+    <p className={styles.errorMessage}>{message}</p>
     {children}
   </div>
 );

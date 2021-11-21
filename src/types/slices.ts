@@ -1,4 +1,4 @@
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from './features';
+import { ErrorMessage, IQuoteTicker, IQuoteTickerSymbol, ISortParams } from './features';
 
 export interface ITickersState {
   data: IQuoteTicker[];
@@ -11,4 +11,5 @@ export interface ITickersState {
   onLimit50: boolean;
   sortType: ISortParams;
   isDarkTheme: boolean;
+  error: ErrorMessage;
 }

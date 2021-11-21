@@ -35,3 +35,5 @@ export type SortByField = (
   tickerA: IQuoteTicker,
   tickerB: IQuoteTicker,
 ) => CELL_VALUE.UP | CELL_VALUE.DOWN | CELL_VALUE.MIDDLE;
+
+export type ErrorMessage = string | null;

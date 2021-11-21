@@ -6,6 +6,7 @@ import { quoteTableSelectors } from '../../../state/ducks/quoteTable';
 import tickerQueue from '../../../api/tickerQueue';
 import { tickersWs } from '../../../api/socketConnect';
 import QuoteTableView from '../../components/QuoteTableView/QuoteTableView';
+import ErrorIndicator from '../../components/ErrorIndicator/ErrorIndicator';
 
 import { ITickersState } from '../../../types/slices';
 import { WebSocketApp } from '../../../types/utils';
@@ -27,6 +28,10 @@ const QuoteTable: React.FC = () => {
   }, [dispatch]);
 
   const sortedTickers: IQuoteTicker[] = getSortedTickers(tickersState, sortParams);
+
+  if (tickersState.error) {
+    return <ErrorIndicator message={tickersState.error} />;
+  }
 
   return (
     <QuoteTableView
