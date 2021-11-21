@@ -1,6 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { IQuoteTicker, IQuoteTickerSymbol, ISortParams } from '../../../types/features';
+import {
+  IQuoteTicker,
+  IQuoteTickerSymbol,
+  ISortParams,
+  ErrorMessage,
+} from '../../../types/features';
 import {
   ICreateActionTickerPayload,
   PrepareTickersMap,
@@ -28,6 +33,7 @@ const tickersActions = {
   toggleDarkTheme: createAction<void>('tickers/toggle/DarkTheme'),
   setSortType: createAction<ISortParams>('tickers/sortType/set'),
   toggleLimit: createAction<void>('tickers/toggle/limit50'),
+  setError: createAction<ErrorMessage>('tickers/set/error'),
 };
 
 export default tickersActions;

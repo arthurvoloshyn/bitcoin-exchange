@@ -16,9 +16,10 @@ export const initialTickersState: ITickersState = {
     type: SORT_DIRECTIONS.DOWN,
   },
   isDarkTheme: false,
+  error: null,
 };
 
-const { tickers, symbols, toggleDarkTheme, setSortType, toggleLimit } = tickersActions;
+const { tickers, symbols, toggleDarkTheme, setSortType, toggleLimit, setError } = tickersActions;
 
 const reducer = createReducer(initialTickersState, builder => {
   builder
@@ -54,6 +55,9 @@ const reducer = createReducer(initialTickersState, builder => {
     })
     .addCase(toggleLimit, state => {
       state.onLimit50 = !state.onLimit50;
+    })
+    .addCase(setError, (state, { payload }) => {
+      state.error = payload;
     });
 });
 
