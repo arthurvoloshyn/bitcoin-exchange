@@ -9,7 +9,6 @@ Simple React Bitcoin Exchange Application
 - react ^17.x
 - typescript 4.x
 - @reduxjs/toolkit 1.x
-- storybook 6.x
 
 ### To install
 
